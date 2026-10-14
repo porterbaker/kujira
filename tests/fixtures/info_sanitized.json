@@ -1,0 +1,1 @@
+{"patronLevel":0,"tierName":"Tier X","monthlyLimit":1000,"remainingCalls":900,"usedCalls":100,"resetAt":"2026-01-01T00:00:00.000Z","sharedPool":true,"products":["cfb","cbb"],"features":{"adjustedMetrics":true,"weather":true,"scoreboard":true,"livePlayByPlay":true,"graphQl":false}}

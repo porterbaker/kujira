@@ -1,0 +1,358 @@
+transfer_key,season,transfer_date,first_name,last_name,position,origin,destination,athlete_id,candidate_name,candidate_position,candidate_roster_season,name_score,last_name_match,first_name_compatible,shared_last_name,position_match,destination_confirmed,second_best_score,confidence
+8d3e8c893a08be44,2026,2026-01-16T04:38:00.000000+0000,Breezy,Dubar,RB,Boise State,Missouri State,5077390,jambres dubar,RB,2025,74.6,true,false,false,true,true,31.3,84.6
+8a7d47b7a1ce484c,2026,2026-01-16T17:12:00.000000+0000,Tre,Stevens,LB,Lafayette,Arkansas State,5152671,robert stevens,LB,2025,74.4,true,false,false,true,true,30.0,84.4
+1161dd1d2b291918,2025,2024-12-20T23:04:00.000000+0000,Mar'Quavious,Moss,S,West Georgia,Kansas State,5224708,qua moss,DB,2024,74.3,true,false,false,true,true,37.5,84.3
+59adbcc28d35c1be,2025,2025-01-10T06:00:00.000000+0000,Tailique,Williams,WR,Georgia State,Western Michigan,4597248,talique williams,WR,2024,89.3,true,true,true,true,true,84.3,84.3
+288f7811d2993879,2023,2022-12-05T22:31:00.000000+0000,Trey,Fite,EDGE,SMU,Louisiana,4870400,drenon fite,DL,2022,74.0,true,false,false,true,true,36.0,84.0
+0a520f7eda930c01,2021,2020-12-14T00:00:00.000000+0000,Jerreth,Sterns,WR,Houston Christian,Western Kentucky,4383723,jarreth sterns,WR,2020,88.6,true,true,true,true,true,83.6,83.6
+38e76890080395ee,2025,2025-04-26T18:26:00.000000+0000,Nathan,Knapik,OT,Idaho,Illinois,5083192,ayden knapik,OL,2024,73.6,true,false,false,true,true,31.1,83.6
+fafabf98d1e93911,2025,2025-01-02T02:27:00.000000+0000,Elijah,Jackson-Anderson,RB,Eastern Michigan,Wofford,4832021,ihson jackson anderson,RB,2024,73.6,true,false,false,true,true,37.9,83.6
+e17b62249e6d8eb7,2026,2026-01-17T02:51:00.000000+0000,Da'Kaari,Nelson,LB,Penn State,NC State,4870957,dakarri nelson,LB,2025,88.6,true,true,true,true,true,70.0,83.6
+082a6ced0e39b145,2023,2023-05-23T05:33:00.000000+0000,Justin,Brown,S,Mississippi State,Georgia Tech,4362604,jamari brown,CB,2023,83.3,true,true,false,true,false,35.0,83.3
+90c4a74623caa842,2022,2021-12-14T14:39:00.000000+0000,Shannon,Bishop,CB,Western Kentucky,Minnesota,4363052,beanie bishop,CB,2021,73.1,true,false,false,true,true,34.8,83.1
+c4619f372977a46a,2022,2021-12-29T17:24:00.000000+0000,Mekhi,Miller,CB,Miami (OH),New Mexico State,4428013,mehki miller,LB,2021,88.0,true,true,false,false,true,36.5,83.0
+df927919f83b9954,2022,2022-01-12T18:39:00.000000+0000,Andrew,Mims,LB,South Florida,,4269191,drew mims,LB,2021,78.0,true,false,false,true,false,40.0,83.0
+4885cab5fe6f8ad9,2026,2026-01-11T01:51:17.000000+0000,Mike,Williams Jr.,DL,UTSA,Marshall,5297111,mickel williams,DL,2025,88.0,true,true,true,true,true,72.0,83.0
+1819e6960bc4feb6,2022,2021-11-28T16:41:00.000000+0000,James,Gordon IV,LB,Minnesota,South Florida,4429679,dj gordon,LB,2021,72.9,true,false,false,true,true,43.2,82.9
+700370c6b0ce6ce7,2022,2021-12-16T17:28:00.000000+0000,Sam,Taimani,DL,Washington,Oregon,4361114,taki taimani,DL,2021,72.9,true,false,false,true,true,36.0,82.9
+751ba716b5f2d1bf,2024,2023-12-14T18:03:00.000000+0000,Javon,Swinton,WR,Eastern Michigan,,4431425,von swinton,WR,2023,77.5,true,false,false,true,false,40.0,82.5
+87a10943e55ce075,2026,2026-01-03T14:05:00.000000+0000,Jay,Crawford,CB,Auburn,Ole Miss,5079347,jalyn crawford,CB,2025,87.5,true,true,true,true,true,82.0,82.5
+513507b881d08d97,2021,2021-05-27T00:00:00.000000+0000,Shan,Sachdeva,EDGE,New Mexico,,4570102,harshan sachdeva,DL,2020,77.3,true,false,false,true,false,32.3,82.3
+841e722d9b3611a0,2021,2021-03-25T00:00:00.000000+0000,Anthony,Dinkins-McCall,ATH,Georgia Southern,,4686418,tony dinkins mccall,WR,2020,77.3,true,false,false,true,false,36.9,82.3
+0a52ad70bfb5e80d,2026,2025-12-28T18:37:00.000000+0000,Eyitayo,Omotinugbon,IOL,Boise State,,5147512,tayo omotinugbon,OL,2025,77.3,true,false,false,true,false,30.0,82.3
+056ac06b55cf4578,2026,2026-01-08T22:10:00.000000+0000,Daveon,Crouch,LB,Boston College,Kansas,4837267,bam crouch,LB,2025,72.2,true,false,false,true,true,34.3,82.2
+df99b831d3f0c1b2,2026,2026-01-15T16:36:00.000000+0000,TJ,Branch,S,Colorado,UCF,5295613,antonio branch,DB,2025,72.2,true,false,false,true,true,34.3,82.2
+c878bd81d373e6dd,2022,2022-03-30T13:43:00.000000+0000,Quinton,Cage,S,LSU,UTSA,4698745,pig cage,DB,2021,72.0,true,false,false,true,true,33.6,82.0
+14fc493ada66253e,2022,2021-12-10T06:00:00.000000+0000,Jalen,Curry,WR,Arizona,Buffalo,4426449,boobie curry,WR,2021,71.8,true,false,false,true,true,41.7,81.8
+e53665afb1b11430,2023,2022-12-05T19:32:00.000000+0000,Michael,Dixon,S,Minnesota,Rutgers,4429579,flip dixon,DB,2022,71.8,true,false,false,true,true,36.4,81.8
+3c5dcf167c58c4b1,2024,2024-04-16T14:07:00.000000+0000,Treviance,Bronson,DL,Arkansas State,North Texas,4879488,vj bronson,DL,2023,71.8,true,false,false,true,true,38.7,81.8
+829de628cb9a9599,2021,2021-01-05T00:00:00.000000+0000,Joseph,Anderson,SDE,South Carolina,Purdue,4570681,joe anderson,DL,2020,86.7,true,true,false,false,true,44.0,81.7
+e587620cfec78995,2022,2022-04-26T17:59:00.000000+0000,Joseph,Evans,DL,LSU,UTSA,4568016,joe evans,DL,2021,86.7,true,true,true,true,true,71.7,81.7
+ef2785e23bb34597,2022,2022-01-10T15:09:00.000000+0000,Cam'ron,Jones,CB,SMU,Grambling,4689544,cam jones,DB,2020,96.7,true,true,true,true,false,73.3,81.7
+a3a0c6664ca8f949,2023,2022-12-05T21:12:00.000000+0000,Roderick,Hopes,S,Tulsa,Louisiana Tech,4873240,zion hopes,S,2022,71.7,true,false,false,true,true,32.3,81.7
+d1e735d860fd4d2b,2023,2022-11-30T14:02:00.000000+0000,Deandrae,McCray,WR,Austin Peay,Texas Tech,4879288,drae mccray,WR,2022,86.7,true,true,true,true,true,73.1,81.7
+ca90e0a08207e5e0,2025,2025-04-24T23:55:00.000000+0000,Kam,Bell,TE,Florida Atlantic,Jacksonville State,4428638,kamaar bell,OL,2023,96.7,true,true,false,false,false,31.6,81.7
+ceb932735b1bcd4b,2026,2026-01-11T17:01:00.000000+0000,Joseph,Reddish,CB,Virginia Tech,App State,5261482,joe reddish,DB,2025,86.7,true,true,true,true,true,71.5,81.7
+4df4684a677e299c,2022,2022-04-12T14:04:00.000000+0000,Mar'Keise,Irving,RB,Minnesota,Oregon,4596448,bucky irving,RB,2021,71.5,true,false,false,true,true,32.7,81.5
+08d86486549a3099,2022,2021-12-06T20:17:00.000000+0000,Victor,Oluwatimi,IOL,Virginia,Michigan,4370807,olusegun oluwatimi,OL,2021,71.4,true,false,false,true,true,26.7,81.4
+bc30a2811a3221f2,2022,2022-04-29T17:26:00.000000+0000,Kelvontay,Dixon,WR,Texas,SMU,4431068,moochie dixon,WR,2021,71.2,true,false,false,true,true,40.0,81.2
+9a351098e37dae72,2024,2023-12-04T17:41:00.000000+0000,Miguel,Jackson,DL,Charlotte,Utah State,4685233,migo jackson,DL,2023,86.0,true,true,true,true,true,73.1,81.0
+d34efc0279bd3ee1,2026,2025-12-12T20:53:00.000000+0000,Kai,Wheeler,IOL,New Mexico State,,5104269,malekai wheeler,OL,2025,76.0,true,false,false,true,false,35.6,81.0
+385b3ede6c1e411a,2024,2023-12-24T16:52:00.000000+0000,Daniel,Ogundipe,OT,UTSA,Florida International,4686572,ayomikun daniel ogundipe,OL,2023,75.7,true,false,false,true,false,32.3,80.7
+ec6cf9bf237484ed,2025,2025-05-10T15:22:00.000000+0000,Reginald,Allen Jr.,LB,Western Kentucky,Bryant,5151132,reggie allen,LB,2024,85.7,true,true,true,true,true,72.7,80.7
+fcdf8ead86df9b5b,2022,2021-12-20T15:25:00.000000+0000,Michael,Washington,RB,Buffalo,Buffalo,4686658,mike washington,RB,2021,85.5,true,true,true,true,true,71.7,80.5
+c6e60108efa884a4,2025,2025-02-03T00:44:00.000000+0000,Michael,Lunz,LB,Tulane,South Carolina State,4683327,mike lunz,DE,2024,85.5,true,true,false,false,true,42.9,80.5
+ca12853a6129cb36,2025,2025-01-10T19:36:00.000000+0000,Mike,Williams,IOL,Florida,Towson,5101130,michael williams,OL,2024,85.5,true,true,true,true,true,71.5,80.5
+b3386fa3ca6bce88,2026,2026-01-05T18:07:00.000000+0000,Michael,Montgomery,LB,Southern Miss,Memphis,5152786,mike montgomery,LB,2025,85.5,true,true,true,true,true,73.3,80.5
+46e1affd4a6db454,2023,2022-12-02T23:23:00.000000+0000,Demontae,Crumes,WR,Kentucky,,4429483,tae tae crumes,WR,2022,75.3,true,false,false,true,false,34.3,80.3
+1a56a8e3613e26e2,2022,2021-09-22T19:42:00.000000+0000,Thomas,Joe-Kamara,LB,Temple,Monmouth,4427607,thomas joe kamara,DB,2021,100.0,true,true,true,false,true,100.0,80.0
+2f8a56353d9a05cd,2022,2022-07-07T20:47:00.000000+0000,James,Ziglor III,RB,Vanderbilt,Buffalo,4688539,james ziglor,DB,2021,100.0,true,true,true,false,true,100.0,80.0
+7c9f50863cf3f0da,2022,2022-06-02T22:16:00.000000+0000,DJ,Johnson,OLB,Illinois,Louisiana Tech,4703799,dj johnson,DL,2021,100.0,true,true,true,false,true,100.0,80.0
+d89a6018e2d2f067,2022,2021-11-29T15:18:00.000000+0000,Dante,Zanders,DL,Florida,Florida,4360247,dante zanders,TE,2021,100.0,true,true,true,false,true,100.0,80.0
+f933182daf64f5f9,2022,2022-05-02T16:23:00.000000+0000,Daemon,Hill,CB,Central Michigan,Florida Atlantic,4695674,daedae hill,DB,2021,85.0,true,true,true,true,true,84.0,80.0
+6e155b3ff748e555,2023,2022-12-05T22:12:00.000000+0000,Will,Crowder,QB,West Virginia,Troy,4431633,goose crowder,QB,2022,70.0,true,false,false,true,true,36.9,80.0
+3586663a2f67d70c,2025,2025-01-02T00:08:00.000000+0000,Bert,Emanuel Jr.,QB,Central Michigan,San Diego State,4916888,bert emanuel,WR,2024,100.0,true,true,true,false,true,100.0,80.0
+dc4aafd5850fa446,2025,2025-04-25T22:31:00.000000+0000,Jerry,Wilson,CB,Houston,Florida State,4837203,jeremiah wilson,DB,2024,84.6,true,true,true,true,true,82.0,79.6
+348aa60656cbcdc3,2021,2020-11-05T00:00:00.000000+0000,Re'Mahn,Davis,RB,Temple,Vanderbilt,4429501,ray davis,RB,2020,84.4,true,true,true,true,true,72.2,79.4
+ef6c61665ce12f3e,2023,2022-12-05T15:06:00.000000+0000,Ja'Khi,Green,OT,Maryland,,4429843,tank green,OL,2022,74.4,true,false,false,true,false,31.3,79.4
+4ec2a7176e36cb0e,2025,2024-12-09T13:30:00.000000+0000,Cade,Puckett,IOL,Georgia State,,5220693,james puckett,OL,2024,74.4,true,false,false,true,false,31.3,79.4
+8dee3ba9514f7f17,2024,2024-01-16T20:30:00.000000+0000,Tailique,Williams,WR,Georgia State,,4597248,talique williams,WR,2023,89.3,true,true,true,true,false,72.7,79.3
+2ffc7785420dc281,2022,2021-11-17T22:52:00.000000+0000,Jacques,Wilson,CB,BYU,,4687467,jaques wilson,DB,2021,89.2,true,true,true,true,false,83.6,79.2
+c23658f6fd578e46,2023,2023-04-15T20:02:00.000000+0000,D'Vion,Harris,EDGE,Old Dominion,Colorado,4427394,deeve harris,DL,2022,84.0,true,true,true,true,true,84.0,79.0
+eb3eb287fbb0d28f,2024,2023-12-04T14:30:00.000000+0000,Roger,Walters,WR,Charlotte,Iowa Western C.C.,4869735,fresh walters,WR,2023,74.0,true,false,false,true,false,33.6,79.0
+41235c16f4f1e49f,2022,2022-04-12T18:52:00.000000+0000,Demaurez,Bellamy,LB,South Florida,,4426679,demaruez bellamy,S,2021,88.8,true,true,false,false,false,32.0,78.8
+0bc251fb9db54661,2022,2021-10-26T17:23:00.000000+0000,LaMarque,Davis,CB,Southern Miss,,4246845,tre davis,DB,2021,73.6,true,false,false,true,false,34.3,78.6
+de9a55c6f39d20bf,2022,2021-11-29T23:09:00.000000+0000,LeDarrius,Cox,DL,Ole Miss,Indiana,4426979,ld cox,DT,2021,83.6,true,true,true,true,true,71.3,78.6
+8037958d9ce1a12c,2023,2023-01-03T22:33:00.000000+0000,John Paul,Richardson,WR,Oklahoma State,TCU,4685183,jp richardson,WR,2022,83.6,true,true,true,true,true,72.5,78.6
+ac535c88eb98a55f,2026,2026-01-06T22:52:00.000000+0000,Jahiem,Johnson,CB,Tulane,Arkansas,5121992,joker johnson,DB,2025,83.6,true,true,true,true,true,73.6,78.6
+fcc67716d8768166,2024,2023-12-01T06:00:00.000000+0000,Jawaun,Singletary,IOL,Grambling,New Mexico,5089883,jawuan singletary,OL,2022,88.3,true,true,true,true,true,87.3,78.3
+1e983d2d2bfdecac,2025,2025-01-03T06:00:00.000000+0000,Rene,Miller,OT,Alcorn State,Kennesaw State,5231313,tayvonne miller,,2024,73.3,true,false,false,true,false,36.9,78.3
+457d9d3a6f697c9d,2025,2024-12-26T16:35:00.000000+0000,Jaqavius,Yates,OT,UAB,,5082369,quez yates,OL,2024,73.3,true,false,false,true,false,34.3,78.3
+19d03bbe7fc67a9d,2026,2025-12-01T16:26:34.000000+0000,Tabias,Hinton,EDGE,Alcorn State,,4870814,tobias hinton,LB,2025,88.3,true,true,false,false,false,33.1,78.3
+228e08a045256510,2022,2021-12-07T00:35:00.000000+0000,Christopher,Brooks,RB,California,BYU,4429316,decarlos brooks,RB,2021,73.2,true,false,false,true,false,51.4,78.2
+0dcaef3d78f936f8,2021,2021-04-29T00:00:00.000000+0000,Cornelius,Forrest Jr.,TE,UCF,,4690127,tony forrest,TE,2020,73.1,true,false,false,true,false,33.1,78.1
+ddec12afa6505ebb,2023,2022-12-30T17:53:00.000000+0000,Andrew,Cannon,IOL,Nevada,,4699798,drew cannon,OL,2021,78.0,true,false,false,true,false,36.9,78.0
+0c57417ba2201998,2021,2020-11-17T00:00:00.000000+0000,Lonkevious,McFadden,WR,Kent State,Eastern Kentucky,4362351,keke mcfadden,WR,2020,72.9,true,false,false,true,false,33.8,77.9
+30e731e120c20e1e,2022,2021-10-13T14:09:00.000000+0000,Kerry,Martin,S,West Virginia,Akron,4427893,kj martin,S,2021,82.9,true,true,true,true,true,72.2,77.9
+b45c980aa34d9ceb,2025,2025-01-01T11:02:00.000000+0000,DJ,Jones,EDGE,Virginia,Florida A&M,5161642,daryl jones,DE,2024,82.9,true,true,true,true,true,82.5,77.9
+f310d6ef6300519f,2025,2024-12-22T21:26:00.000000+0000,Tyler,King,WR,Wyoming,New Mexico State,4869443,tk king,WR,2024,82.9,true,true,true,true,true,72.5,77.9
+1dc160669fa708c4,2022,2021-10-29T15:56:00.000000+0000,Nate,Harris,S,LSU,,4242215,todd harris,S,2021,72.5,true,false,false,true,false,34.3,77.5
+72971f1951c8761f,2022,2022-04-28T16:45:00.000000+0000,Javian,Hester,WR,Missouri,Oklahoma,4429103,jj hester,WR,2021,82.5,true,true,true,true,true,82.5,77.5
+4f600cf43d39e248,2023,2022-12-05T19:37:00.000000+0000,Christian,Ford,WR,Mississippi State,App State,4361398,scoobie ford,WR,2022,72.5,true,false,false,true,false,57.9,77.5
+7fb3b879af7ce17d,2021,2021-07-15T10:24:00.000000+0000,Shaquan,Griffin,DL,Georgia Southern,,4241132,quan griffin,DE,2019,77.3,true,false,false,true,false,30.0,77.3
+7525cea6f281dd06,2022,2021-11-29T22:14:00.000000+0000,Gabe,Brown,IOL,Bowling Green,Grand Valley State,4695687,gabriel brown,OL,2021,87.3,true,true,true,true,false,73.3,77.3
+3c2523826a031ebe,2026,2026-01-08T16:32:00.000000+0000,William,Holmes,EDGE,Utah State,Illinois,5220661,will holmes,LB,2025,97.3,true,true,true,false,true,72.7,77.3
+0773f08790a77282,2022,2022-01-14T02:20:00.000000+0000,Trevion,Stevenson,LB,North Carolina,Norfolk State,4682914,tj stevenson,DL,2021,82.2,true,true,false,false,true,40.0,77.2
+3d81cffcd6a22160,2024,2023-12-04T15:40:00.000000+0000,Frank,Naughton,LS,Western Kentucky,,5085433,trey naughton,LS,2023,72.2,true,false,false,true,false,32.0,77.2
+17cf26fc0c32a63f,2025,2025-01-02T05:58:00.000000+0000,DJ,Mayes,WR,New Mexico,Utah State,5228807,dangelo mayes,CB,2024,82.2,true,true,false,false,true,37.5,77.2
+870d84d6c9ad7e6a,2025,2025-05-03T16:47:00.000000+0000,Zion,Allen,CB,Southern Utah,Hawai'i,5160054,mikey allen,DB,2024,72.2,true,false,false,true,false,35.0,77.2
+0c0fde5ad5e11b17,2022,2022-06-20T21:18:00.000000+0000,John Wesley,Kennedy III,RB,Georgia Southern,,4241138,wesley kennedy,RB,2020,77.1,true,false,false,true,false,28.2,77.1
+db3efa5413aad1d6,2024,2023-12-04T21:30:00.000000+0000,Deuce,Caldwell,LB,North Carolina,,5081420,randy caldwell,LB,2023,72.0,true,false,false,true,false,34.3,77.0
+0e03e59a1e0f0b30,2025,2024-12-29T16:21:00.000000+0000,Jake,Yurachek,LB,Arkansas,,5152157,brooks yurachek,LB,2024,72.0,true,false,false,true,false,33.6,77.0
+a1291db420a2fd77,2025,2025-01-10T06:00:00.000000+0000,JJ,Johnson,S,Georgia State,NC State,5082438,jeremiah johnson,S,2024,82.0,true,true,true,true,true,70.0,77.0
+c6883e1c62b2e82a,2025,2024-12-15T16:48:00.000000+0000,Djay,Williams,IOL,Louisiana,UTSA,5221116,devron williams,OL,2024,82.0,true,true,true,true,true,74.0,77.0
+04e82d1b0a25e262,2021,2021-04-05T00:00:00.000000+0000,Uluaki,Katoanga,LB,Washington State,,4427683,rocky katoanga,LB,2020,71.8,true,false,false,true,false,32.3,76.8
+2ac5ab78c534a0f6,2022,2022-03-25T12:14:00.000000+0000,Chevy,Brenson,WR,Ball State,,4688216,karate brenson,WR,2021,71.8,true,false,false,true,false,32.3,76.8
+35faf6bfbe5055aa,2023,2023-04-21T16:30:00.000000+0000,Maximus,Fonoti-Maikui,LB,Utah State,,5082618,lofa fonoti maikui,LB,2022,71.8,true,false,false,true,false,29.1,76.8
+c9aa5b8f4406b3ec,2023,2022-12-05T18:00:00.000000+0000,Ralpheal,Marshall,CB,Louisiana Tech,,4686614,taz marshall,DB,2022,71.8,true,false,false,true,false,32.0,76.8
+3cb5c1a42b2890c6,2024,2023-12-04T16:26:00.000000+0000,Bennie,Garner,LB,Southern Miss,,4880738,caleb garner,LB,2023,71.8,true,false,false,true,false,33.6,76.8
+b7076c9922223a41,2024,2024-04-24T20:21:00.000000+0000,Chatavies,Johnson,LB,Memphis,Sam Houston,5152161,cj johnson,LB,2023,81.8,true,true,true,true,true,72.7,76.8
+ce3cf473da504946,2026,2026-05-14T17:50:00.000000+0000,Ricky,Lolohea,DL,Oklahoma,App State,5231020,siolaa lolohea,DL,2025,71.8,true,false,false,true,false,30.0,76.8
+e68f4c8da521a294,2021,2020-11-09T00:00:00.000000+0000,Kaimana,Wa'a,IOL,Hawai'i,Texas State,4573143,bubba waa,OL,2020,71.7,true,false,false,true,false,45.7,76.7
+47d134d4dd60987a,2023,2023-04-25T21:44:00.000000+0000,Jeremiah,Caldwell,CB,Louisville,,4713278,rock caldwell,CB,2022,71.7,true,false,false,true,false,33.1,76.7
+fffc22a699a69390,2024,2024-02-09T06:00:00.000000+0000,Jordan,Taylor,CB,Tusculum,James Madison,5160284,marcus taylor,,2023,71.7,true,false,false,true,false,30.0,76.7
+1ee9365f49802a63,2025,2024-12-14T15:30:00.000000+0000,Jaxson,Jones,EDGE,Oregon,Utah,5102583,jax jones,LB,2024,96.7,true,true,true,false,true,73.3,76.7
+5d9cef2f99af18ca,2021,2021-03-23T00:00:00.000000+0000,Quentin,Jones,DL,Kent State,,4569236,buddha jones,DT,2020,71.5,true,false,false,true,false,31.1,76.5
+afefc9a1ac535cc6,2021,2021-01-01T00:00:00.000000+0000,Michael,Lewis,EDGE,Liberty,East Tennessee State,4365495,austin lewis,DL,2020,71.5,true,false,false,true,false,42.9,76.5
+1c6edfcd8f8c2689,2023,2023-01-06T20:41:00.000000+0000,Quaterrius,Tolbert,WR,Middle Tennessee,,5082066,bud tolbert,WR,2022,71.5,true,false,false,true,false,36.4,76.5
+fe293a26189a2cd8,2022,2021-11-30T14:15:00.000000+0000,Tillman,Weaver,DL,Ohio,,4709790,bradley weaver,DL,2021,71.4,true,false,false,true,false,31.1,76.4
+117af0a4a9eab6d2,2024,2024-04-23T18:36:00.000000+0000,Quantaves,Gaskins,CB,Vanderbilt,,4888606,gumbo gaskins,S,2023,71.4,true,false,false,true,false,28.0,76.4
+1b82527236f76fe4,2023,2022-12-05T18:05:00.000000+0000,Michael,Green,LB,Virginia,,4683188,mike green,DL,2022,85.5,true,true,false,false,false,43.2,75.5
+5e68195265f97d17,2023,2023-04-27T03:43:00.000000+0000,Samuel,Green,RB,UNLV,,4602922,sammy green,RB,2022,85.5,true,true,true,true,false,85.5,75.5
+c26ac12e75bac085,2025,2025-04-08T01:30:00.000000+0000,Mike,Evans,CB,Austin Peay,,5083046,michael evans,DB,2024,85.5,true,true,true,true,false,70.0,75.5
+33b6c174c465939c,2021,2020-12-16T00:00:00.000000+0000,JD,Harris,CB,Northern Illinois,,4374096,jq harris,DB,2020,85.0,true,true,true,true,false,70.0,75.0
+65e786dea3c5e1fe,2021,2020-12-09T00:00:00.000000+0000,Avonta,Crim,S,Western Kentucky,,4363057,bj crim,DB,2020,70.0,true,false,false,true,false,32.3,75.0
+c588089c54a49e57,2023,2022-12-05T16:12:00.000000+0000,Taevion,Clarke,LB,Old Dominion,,4684552,taevion clarke,DE,2022,100.0,true,true,true,false,false,100.0,75.0
+fdb81f0e7bfdde14,2024,2024-05-16T03:24:00.000000+0000,Issiah,Walker Jr.,OT,Texas State,Akron,4360288,brey walker,OL,2023,70.0,true,false,false,true,false,33.6,75.0
+0c493d5c8e5ca0e8,2025,2025-01-20T18:28:00.000000+0000,Joseph,Gonzales,S,Yale,Colorado School of Mines,5094037,daquan gonzales,CB,2024,70.0,true,false,false,true,false,35.6,75.0
+36af8f6af5ac42e8,2025,2025-04-26T02:32:00.000000+0000,Moses,Gray,RB,Southern Miss,,5152924,jq gray,RB,2024,70.0,true,false,false,true,false,37.9,75.0
+d1f547963c8fc3bd,2025,2025-01-22T20:23:00.000000+0000,Trey,Dunn,QB,Navy,Marshall,5220481,dallas dunn,QB,2024,70.0,true,false,false,true,false,38.2,75.0
+cacc5c17fb845139,2026,2026-01-13T15:59:00.000000+0000,Jack,Puckett,LB,Central Oklahoma,Oklahoma State,5400205,hank puckett,,2026,75.0,true,false,false,true,false,25.7,75.0
+2cb6ea1301ed61fd,2026,2026-01-14T15:21:00.000000+0000,Emmanual,Stevenson,TE,Arkansas State,,4711409,manny stevenson,TE,2024,74.6,true,false,false,true,false,38.7,74.6
+cbffef9de44a9c1d,2021,2020-10-21T00:00:00.000000+0000,Tavian,Mayo,CB,West Virginia,,4430098,tae mayo,CB,2020,84.4,true,true,true,true,false,71.8,74.4
+8e71fd70d954bf84,2024,2023-12-20T20:16:00.000000+0000,Andre,Jones,WR,Eastern New Mexico,Coastal Carolina,5087432,cage jones,,2022,74.4,true,false,false,true,false,30.0,74.4
+d178766b903facc5,2024,2023-12-04T16:18:00.000000+0000,Jaquan,Dixon,RB,Georgia State,,4701768,jay dixon,RB,2023,84.4,true,true,true,true,false,72.9,74.4
+75eb9ec6a42087ff,2026,2026-01-11T18:07:00.000000+0000,JaVonnie,Gibson,WR,Oklahoma,Cincinnati,4713358,jayden gibson,WR,2025,84.3,true,true,true,true,false,84.0,74.3
+357b6852a7fd7ca4,2023,2022-08-02T23:44:00.000000+0000,Amahri,McCray,LB,Florida International,,4683449,ahmahri mccray,LB,2021,89.2,true,true,true,true,false,70.0,74.2
+b6a1f0c9d7b38e09,2024,2024-04-18T16:16:00.000000+0000,Terrance,Howard,CB,Alabama,North Carolina Central,5101120,kameron howard,DB,2024,74.0,true,false,false,true,false,37.2,74.0
+0304e7e320d0170e,2022,2021-10-07T11:41:00.000000+0000,John Paul,Flores,OT,Dartmouth,Virginia,4429604,michael flores,OL,2022,73.8,true,false,false,true,false,34.3,73.8
+31a357931901ed87,2022,2021-12-16T03:44:00.000000+0000,Tylan,Grable,IOL,Jacksonville State,UCF,4884886,ashton grable,G,2022,73.6,true,false,false,true,false,33.6,73.6
+677a0961e6025923,2021,2021-01-28T00:00:00.000000+0000,Charles,Jones,LB,Central Michigan,,4244776,chuck jones,LB,2020,83.3,true,true,true,true,false,73.6,73.3
+b15413ab414636d8,2025,2025-04-23T16:23:00.000000+0000,Carlos,Moore,OT,Elon,Maryland,5086542,cazeem moore,DE,2024,83.3,true,true,false,false,false,37.2,73.3
+525ecb6a8734472e,2021,2020-08-20T00:00:00.000000+0000,Shannon,Carswell,DL,Southern Miss,,4362961,junior carswell,DL,2019,73.1,true,false,false,true,false,30.0,73.1
+7ef8d53b9029405e,2021,2021-01-11T00:00:00.000000+0000,Jeremiah,Knight,WR,Akron,,4686860,jalen knight,WR,2020,83.1,true,true,true,true,false,83.1,73.1
+829bf629ae5cbdd3,2023,2023-01-07T22:42:00.000000+0000,Ja'Kobi,Albert,ATH,Kentucky,Mississippi State,5081081,kobi albert,DB,2022,78.0,true,false,true,true,true,74.0,73.0
+072983fc0486af72,2025,2025-04-21T17:34:00.000000+0000,Ty,Cooper,EDGE,Tulane,Tulsa,4712462,keith cooper,DL,2023,72.9,true,false,false,true,false,38.2,72.9
+5afe9494b2cf148e,2025,2025-04-24T16:22:00.000000+0000,TJ,Jones,CB,Hawai'i,,4710007,tariq jones,DL,2024,82.9,true,true,false,false,false,33.3,72.9
+43491bd563fdfe06,2026,2026-01-08T23:34:00.000000+0000,Kiwaun,Davis,CB,Eastern Illinois,Southern,5299763,knowledge davis,DL,2025,82.7,true,true,false,false,false,31.3,72.7
+44c14b7566c51c90,2021,2020-12-23T00:00:00.000000+0000,Dennis,Jackson,DL,Eastern Michigan,,4686755,dj jackson,DL,2020,82.5,true,true,true,true,false,74.0,72.5
+a6f4f029440c19ec,2022,2021-11-29T15:14:00.000000+0000,TJ,Graham,WR,Texas State,,4362669,trevis graham,WR,2021,82.5,true,true,true,true,false,82.5,72.5
+c5c799e64100fdee,2024,2024-01-17T06:00:00.000000+0000,Demond,Williams Jr.,QB,Arizona,Washington,4567216,dj williams,RB,2023,82.5,true,true,false,false,false,36.9,72.5
+e484cc712f229176,2026,2026-01-23T05:40:00.000000+0000,Trae,Williams,CB,Air Force,Furman,5098534,trey williams,DB,2024,87.5,true,true,true,true,false,71.8,72.5
+7c0e134c7ec77624,2022,2021-12-27T21:46:00.000000+0000,Donavon,Johnson,TE,Coastal Carolina,,4690885,dj johnson,TE,2021,82.2,true,true,true,true,false,73.1,72.2
+883d24516fd8bd62,2022,2022-04-20T17:19:00.000000+0000,Derrick,Miller,CB,Iowa State,,4569032,dj miller,DB,2021,82.2,true,true,true,true,false,73.3,72.2
+d9365d8871a67204,2022,2021-12-27T18:49:00.000000+0000,Anthony,Crider,LB,Toledo,,4257245,aj crider,LB,2021,82.2,true,true,true,true,false,73.1,72.2
+44f6fce0608762b2,2025,2025-02-05T06:00:00.000000+0000,Josiah,Jackson,DL,Davidson,New Mexico State,5224550,cam jackson,DL,2025,72.2,true,false,false,true,false,32.3,72.2
+61d6075f3c61b8ba,2024,2024-04-02T20:01:00.000000+0000,Derrian,Brown,RB,Texas,,4712577,derrick brown,LB,2022,87.1,true,true,false,false,false,38.6,72.1
+0d6d631eb1177950,2026,2026-01-10T23:06:00.000000+0000,Wesley,Hudson,DL,Central Oklahoma,North Texas,5400183,nasir hudson,,2026,71.8,true,false,false,true,false,32.3,71.8
+f62b67b05ed137f3,2025,2025-04-24T16:23:00.000000+0000,Gavin,Crawford,IOL,West Virginia,Virginia Tech,4429104,tykieast crawford,OL,2025,71.5,true,false,false,true,false,32.3,71.5
+96a95e7d8d563d01,2025,2024-12-15T19:01:00.000000+0000,Darrell,Jones,IOL,Bowie State,UTSA,5305157,maximus jones,,2025,71.4,true,false,false,true,false,32.3,71.4
+feb202c4c29d21f3,2021,2021-04-29T00:00:00.000000+0000,Jadarrius,Perkins,CB,Missouri,Florida,3924329,ronnell perkins,S,2019,71.2,true,false,false,true,false,41.2,71.2
+60257185f0a9d11e,2021,2021-06-02T00:00:00.000000+0000,Kevontre,Bradford,RB,LSU,Oklahoma,4685739,tre bradford,RB,2020,75.5,true,false,true,true,true,72.7,70.5
+6c9788626d3a364e,2024,2023-12-04T06:00:00.000000+0000,Elvin,Harris,OT,Campbell,New Mexico,5086054,elijah harris,DB,2022,85.5,true,true,false,false,false,32.3,70.5
+a20cd97ffb1cd0c9,2022,2021-08-17T19:44:00.000000+0000,Nick,Evans,DL,UTSA,,4568016,joe evans,DL,2022,70.0,true,false,false,true,false,31.1,70.0
+05021005857371f0,2024,2024-04-22T14:20:00.000000+0000,Ja'Khi,Green,IOL,Charlotte,UConn,4429843,tank green,OL,2023,74.4,true,false,true,true,true,70.0,69.4
+5eb43842287764fc,2025,2025-04-21T21:20:00.000000+0000,Bear,Bachmeier,QB,Stanford,BYU,4918421,tiger bachmeier,WR,2024,74.4,true,false,false,false,true,32.0,69.4
+870c4fb0847a3bbb,2021,2020-11-23T00:00:00.000000+0000,Tobias,Gilliam,S,Utah State,Utah State,4569984,cash gilliam,LB,2020,74.0,true,false,false,false,true,33.6,69.0
+71ce07fe20f6b68a,2023,2022-12-31T22:17:00.000000+0000,Rodricus,Fitten,EDGE,South Carolina,East Tennessee State,4429599,hot rod fitten,LB,2022,74.0,true,false,false,false,true,32.3,69.0
+3f4f79ad6b73af5b,2026,2026-01-21T20:26:00.000000+0000,Jorge,Diaz Nicolas,K,Virginia,Marshall,5294118,jorge diaz nicholas,PK,2025,58.4,false,false,false,true,true,32.0,68.4
+a909103d25d3c41f,2021,2020-11-02T00:00:00.000000+0000,Tank,Robinson,S,East Carolina,Charlotte,4239407,davondre robinson,DB,2020,73.3,true,false,true,true,true,72.0,68.3
+da602d1aec0570c8,2023,2023-04-21T16:15:00.000000+0000,Antavious,Woody,IOL,Florida State,UAB,4816086,tae woody,DL,2022,73.3,true,false,false,false,true,30.0,68.3
+85ea7e7104a4219a,2025,2025-01-21T20:09:00.000000+0000,Antavious,Woody,IOL,UAB,UL Monroe,4816086,tae woody,DL,2024,73.3,true,false,false,false,true,44.0,68.3
+8b4941cc9d19006a,2025,2025-06-08T22:39:00.000000+0000,Reese,Clark,TE,Temple,Delaware State,4717723,maurice clark,TE,2024,73.3,true,false,true,true,true,71.8,68.3
+b67a7a65f481091b,2025,2024-12-19T22:46:00.000000+0000,Drew,Martin,TE,Memphis,,5152175,andrew martin,TE,2024,78.0,true,false,true,true,false,73.3,68.0
+f466205c5afb2f63,2026,2026-01-16T17:33:00.000000+0000,Jaire,Rawlinson,CB,Kent State,West Virginia,5146977,jaire rawlison,CB,2025,57.9,false,false,false,true,true,37.2,67.9
+9ac69aca5933b757,2021,2021-01-20T00:00:00.000000+0000,Henry,To'o To'o,LB,Tennessee,Alabama,4426350,henry tootoo,LB,2020,57.6,false,false,false,true,true,32.3,67.6
+3b262a351e8e7780,2021,2021-01-15T00:00:00.000000+0000,Jahkeem,Green,DT,Nebraska,South Carolina,4575427,keem green,DL,2020,77.3,true,false,true,true,false,77.3,67.3
+a919ae8feda3782e,2025,2025-04-27T19:43:00.000000+0000,Joey,VanWetzinga,DL,Iowa,Central Michigan,5150658,rusty vanwetzinga,FB,2024,72.2,true,false,false,false,true,28.8,67.2
+712e3655cff48f0a,2021,2021-04-30T00:00:00.000000+0000,Jaren,Handy,SDE,Auburn,Indiana,4567237,stone handy,LB,2020,72.0,true,false,false,false,true,42.0,67.0
+dd3c996ced2d81d0,2023,2023-01-18T20:45:00.000000+0000,Ronald,Nunnery,S,Houston,Florida,4567477,mannie nunnery,LB,2022,71.7,true,false,false,false,true,33.6,66.7
+7bd03339c41a94f5,2024,2023-12-18T19:44:00.000000+0000,Cole,Smith,IOL,Florida Atlantic,,5165464,christian smith,OL,2024,81.5,true,true,true,true,false,72.2,66.5
+969c932dc5cbd710,2021,2020-08-17T00:00:00.000000+0000,Racheem,Booth,LB,Southern Miss,Southern Miss,4429288,kristin booth,DE,2020,71.4,true,false,false,false,true,57.8,66.4
+c6f3d120c556cb99,2021,2020-10-22T00:00:00.000000+0000,Seun,Oluwatimi,DL,Maryland,,4036230,oluwaseun oluwatimi,DL,2020,76.2,true,false,true,true,false,76.2,66.2
+fe3b41ad7dad7e8a,2024,2024-04-30T05:00:00.000000+0000,Kiwaun,Davis,CB,Northern Illinois,,4429529,ivan davis,DE,2023,76.0,true,false,false,false,false,35.6,66.0
+7253589f62ce476a,2025,2025-04-16T17:56:00.000000+0000,Roy'Marr,Thomas,EDGE,James Madison,,4912356,amar thomas,EDGE,2024,75.5,true,false,true,true,false,71.7,65.5
+743c347e2418dac6,2022,2021-11-29T23:40:00.000000+0000,DeaMonte,Trayanum,LB,Arizona State,Ohio State,4430893,chip trayanum,RB,2021,70.0,true,false,false,false,true,34.3,65.0
+b879895f42f54a3f,2022,2022-04-11T13:38:00.000000+0000,Jerrod,Means,WR,Louisiana Tech,Pittsburgh,4427985,bub means,WR,2021,70.0,true,false,true,true,true,70.0,65.0
+f4af06f3b873ca0d,2024,2023-12-04T22:54:00.000000+0000,Devin,Brandt,DL,Old Dominion,New Mexico,5159969,ian brandt,P,2023,75.0,true,false,false,false,false,49.7,65.0
+78aa41e9594ba0cb,2025,2024-12-18T13:27:00.000000+0000,JR,Wilson,WR,Virginia,Florida Atlantic,4896391,sean wilson,WR,2024,70.0,true,false,true,true,true,70.0,65.0
+d6a9565901d741b8,2025,2025-07-27T23:04:00.000000+0000,Marvin,Alexander,WR,Florida Atlantic,Duquesne,4690144,bj alexander,WR,2024,70.0,true,false,true,true,true,70.0,65.0
+aea83b2f2fa9ddd2,2024,2024-04-16T17:50:00.000000+0000,Majon,Wright,WR,San Diego State,,4433936,joey wright,OL,2023,74.4,true,false,false,false,false,31.3,64.4
+e98906949a0813af,2025,2025-04-18T00:09:00.000000+0000,Zah,Jackson,CB,West Virginia,Marshall,4976722,josiah jackson,S,2024,74.4,true,false,true,true,false,72.2,64.4
+59f32cc85a5e122b,2021,2020-11-19T00:00:00.000000+0000,Nolan,Matthews,TE,Arizona State,SMU,4569195,damon matthews,DB,2020,74.0,true,false,false,false,false,48.0,64.0
+522aafb7e6cf61d3,2025,2025-04-26T19:13:00.000000+0000,Brock,Montgomery,WR,Marshall,Tennessee State,4880845,chuck montgomery,WR,2024,74.0,true,false,true,true,false,72.0,64.0
+6d49762c6443aa90,2025,2025-04-22T19:30:00.000000+0000,Alijah,Alexander,DL,Stetson,Eastern Michigan,5226397,kael alexander,QB,2024,74.0,true,false,false,false,false,31.1,64.0
+01d0fe0c21ec2938,2025,2025-01-05T04:08:00.000000+0000,Christian,Ray,EDGE,UTEP,Houston Christian,5221008,michael ray,S,2024,73.8,true,false,false,false,false,38.6,63.8
+216354899c885689,2021,2020-12-18T00:00:00.000000+0000,Shawn,Smith,CB,Virginia,,4240848,heskin smith,DB,2020,73.6,true,false,true,true,false,73.6,63.6
+288808b059d4eec9,2022,2021-12-05T21:08:00.000000+0000,Kevin,Williams,IOL,Northern Colorado,Nebraska,4569298,austin williams,DL,2021,73.6,true,false,false,false,false,36.9,63.6
+63ae23f5e88451a8,2023,2023-04-28T22:06:00.000000+0000,Tyrin,Smith,WR,Texas A&M,,4428532,ainias smith,WR,2022,73.6,true,false,true,true,false,70.0,63.6
+e164dd316a9ca1b8,2025,2025-04-16T18:41:00.000000+0000,Trace,Patterson,TE,Western Kentucky,,245322,marcus patterson,DL,2024,73.6,true,false,false,false,false,38.6,63.6
+98249097babcdccc,2022,2021-11-03T19:35:00.000000+0000,Matthew,Anderson,OT,Louisiana,,4574688,caleb anderson,DB,2021,73.3,true,false,false,false,false,34.8,63.3
+28c9fd9ed50f3a7d,2023,2023-01-12T06:00:00.000000+0000,Lucas,Prendergast,WR,Nevada,,5084960,lucas prendergrast,WR,2022,58.3,false,false,false,true,false,31.0,63.3
+3b5d5052bb2d2cd1,2024,2023-12-14T17:51:00.000000+0000,Raydrian,McKneely,RB,Memphis,Northwestern State,5152176,raydrian mckneeley,RB,2023,58.3,false,false,false,true,false,30.0,63.3
+494a86fd50a0273e,2024,2023-12-05T21:45:00.000000+0000,Derrick,Graham,RB,SE Louisiana,,5084500,rodeo graham,RB,2023,73.3,true,false,true,true,false,73.3,63.3
+b8735db9708b1a4a,2024,2024-04-25T23:31:00.000000+0000,Dorian,Hale,QB,San José State,,5124331,nathan hale,OL,2023,73.3,true,false,false,false,false,36.0,63.3
+06dbd22ae1057d2b,2025,2025-04-21T21:37:00.000000+0000,Saimone,Davis,TE,BYU,Stephen F. Austin,4613105,miles davis,RB,2024,73.3,true,false,false,false,false,38.2,63.3
+4c618a0e8056b485,2025,2025-04-23T18:33:00.000000+0000,Jordan,Owens,TE,Oklahoma State,North Carolina,4430577,rashod owens,WR,2024,73.3,true,false,false,false,false,43.2,63.3
+523a4d77a63c032b,2025,2025-04-25T22:31:00.000000+0000,Jordan,Scott,WR,Florida State,Maryland,4431373,robert scott,OL,2024,73.3,true,false,false,false,false,38.4,63.3
+d5f718204bd51f80,2025,2025-04-28T15:41:00.000000+0000,Jayvin,James,OT,Maryland,Mississippi State,5146988,keyari james,LB,2024,73.3,true,false,false,false,false,33.6,63.3
+ecffa110c3e4d197,2022,2021-08-04T17:01:00.000000+0000,Juan,Harris,DL,Indiana,,4577809,christian harris,WR,2021,73.1,true,false,false,false,false,35.0,63.1
+572fc4422c4e599a,2024,2024-04-17T14:01:00.000000+0000,Goldie,Lawrence,WR,UCF,Arkansas State,4710067,malachi lawrence,EDGE,2023,73.1,true,false,false,false,false,33.1,63.1
+9df31a4036479481,2024,2024-04-22T16:14:00.000000+0000,Zavier,Carter,LB,UCF,,5152182,michael carter,P,2023,73.1,true,false,false,false,false,34.3,63.1
+0ed630526812ee8f,2025,2025-04-25T16:29:00.000000+0000,Carson,Lee,IOL,Mississippi State,West Virginia,4429077,keyvone lee,RB,2024,73.1,true,false,false,false,false,38.4,63.1
+2bab18bbaaca114c,2026,2026-01-09T23:45:00.000000+0000,Dakota,Quinonez,DL,Dartmouth,Duke,5229271,dakota quiononez,DL,2025,58.1,false,false,false,true,false,34.3,63.1
+f9dcd9e40ab47d27,2022,2022-06-16T14:39:00.000000+0000,Ridge,Jacobs,QB,South Florida,,4250935,demontrey jacobs,OL,2021,72.9,true,false,false,false,false,35.0,62.9
+080d31e573b77a46,2024,2024-04-26T20:41:00.000000+0000,Kanious,Vaughn,EDGE,Utah,,4695609,zemaiah vaughn,CB,2023,72.9,true,false,false,false,false,31.1,62.9
+0831dc07972c66be,2024,2024-04-17T19:33:00.000000+0000,Da'Marcus,Cosby II,CB,Sam Houston,,5151202,damarcus crosby,DB,2023,57.9,false,false,false,true,false,42.9,62.9
+ed3b8d61eabe3494,2021,2020-09-21T00:00:00.000000+0000,Kyle,McNamara,WR,Michigan,Western Kentucky,4427455,cade mcnamara,QB,2020,72.5,true,false,false,false,false,33.1,62.5
+a49d786a446ab86e,2023,2022-12-05T13:10:00.000000+0000,Shawn,Munnerlyn,TE,Rutgers,,4685731,don munnerlyn,LB,2022,72.5,true,false,false,false,false,38.6,62.5
+6acd00773143ef18,2021,2021-06-03T00:00:00.000000+0000,Chace,Davis,DL,Nevada,,4241592,gray davis,OL,2020,72.2,true,false,false,false,false,35.6,62.2
+5596f39fa43bf810,2022,2022-03-25T12:14:00.000000+0000,Jaren,Handy,EDGE,Indiana,,4567237,stone handy,LB,2021,72.0,true,false,false,false,false,40.0,62.0
+c2bff0b0dd09c6af,2022,2022-04-26T14:05:00.000000+0000,Kyran,Griffin,WR,Troy,,4568251,elgin griffin,DT,2021,72.0,true,false,false,false,false,50.3,62.0
+07cbfe2397aff4d0,2023,2022-12-05T18:00:00.000000+0000,Jaewan,Boyd,WR,Virginia Tech,,4387384,tink boyd,WR,2022,72.0,true,false,true,true,false,70.0,62.0
+96093b84081c0fd2,2025,2025-05-11T00:10:00.000000+0000,Andrew,Hines III,LB,Wake Forest,Bowling Green,5132641,jack hines,OL,2024,72.0,true,false,false,false,false,41.7,62.0
+3191a3c4761f155c,2022,2021-10-15T16:11:00.000000+0000,Jake,Marion,K,Georgia State,Elon,4696710,ezeqiel marion,WR,2021,71.8,true,false,false,false,false,38.4,61.8
+4f2fa340893eb4f5,2023,2023-06-01T21:42:00.000000+0000,Terry,Roberts,CB,Miami,,4690795,elijah roberts,DE,2022,71.8,true,false,false,false,false,38.6,61.8
+9cd390da2fd82939,2023,2023-04-28T13:48:00.000000+0000,Dustyn,Hall,IOL,Duke,East Carolina,4602967,aaron hall,DT,2022,71.8,true,false,false,false,false,30.0,61.8
+0f2c78b722bfe534,2024,2023-12-04T17:01:00.000000+0000,Jarius,Stewart,CB,Air Force,Eastern New Mexico,5151928,colin stewart,DT,2023,71.8,true,false,false,false,false,41.5,61.8
+04ec772bb9fd43a6,2024,2023-12-08T16:11:00.000000+0000,Jeremiah,Caldwell,CB,Miami (OH),,4608734,ambe caldwell,DB,2023,71.7,true,false,true,true,false,71.7,61.7
+48a8ea884624892d,2024,2024-05-06T15:29:00.000000+0000,Jordan,Smith,LB,Texas State,,4362695,jaydan smith,OL,2023,86.7,true,true,true,false,false,74.6,61.7
+8f5df7e13be783ec,2024,2023-12-04T19:52:00.000000+0000,Nehemiah,Martinez,WR,Texas Tech,Stephen F. Austin,4874627,nehemiah martinez i,WR,2023,56.7,false,false,false,true,false,38.6,61.7
+7e95b17fde9c38bf,2025,2025-04-22T01:22:00.000000+0000,Kody,Jones,S,Memphis,Kennesaw State,4429936,adarious jones,DL,2024,71.7,true,false,false,false,false,34.3,61.7
+4236d8d87ddc0bca,2025,2025-05-10T02:28:00.000000+0000,Isaiah,Myers,WR,Purdue,Western Kentucky,4870863,braxton myers,DB,2023,71.5,true,false,false,false,true,38.4,61.5
+9c0a2321fcc79290,2025,2025-04-21T23:38:00.000000+0000,Alec,Clark,P,Southern Miss,Tulane,4567507,rodrigues clark,RB,2024,71.5,true,false,false,false,false,32.7,61.5
+dff1a142e896fe13,2026,2026-01-16T22:02:00.000000+0000,Isaiah,Villanueva,IOL,Jackson State,Missouri State,5298936,isaiah villaneuva,OL,2025,56.5,false,false,false,true,false,34.8,61.5
+a3babc1ad7526338,2022,2022-04-20T13:55:00.000000+0000,Rae'quin,Lee,RB,Ball State,,4361630,malcolm lee,S,2021,71.4,true,false,false,false,false,34.3,61.4
+5390c0792ff486da,2022,2022-04-15T19:53:00.000000+0000,Kamren,Washington,DL,Sam Houston,Memphis,4914329,jalen washington,RB,2022,75.5,true,false,false,false,false,32.0,60.5
+f3365ab2d5f160eb,2022,2022-01-27T17:27:00.000000+0000,Ani,Izuchukwu,EDGE,Mississippi State,Tulsa,4426490,izuchukwu king ani,DL,2021,50.3,false,false,false,true,true,26.1,60.3
+07263d3bfde0c032,2021,2020-11-04T00:00:00.000000+0000,Greg,Ross,CB,Iowa State,James Madison,4372585,zach ross,OL,2020,70.0,true,false,false,false,false,33.3,60.0
+30aa22dc951c8e72,2021,2021-04-07T00:00:00.000000+0000,AJ,Jefferson,CB,Air Force,,4699777,ben jefferson,WR,2020,70.0,true,false,false,false,false,35.6,60.0
+6650069ed5456d5c,2022,2021-11-02T18:51:00.000000+0000,Rod,Green,IOL,Grambling,,4250932,wesley green,DL,2021,70.0,true,false,false,false,false,36.5,60.0
+59c8c0f4ca77f36b,2024,2024-01-10T14:42:00.000000+0000,Jaivion,Green,CB,Washington,Stanford,4574713,jaden green,LS,2023,85.0,true,true,true,false,false,84.0,60.0
+619c81ab0056fe38,2024,2024-04-25T00:07:00.000000+0000,Moussa,Berry,WR,Western Kentucky,,5095915,moussa barry,WR,2023,55.0,false,false,false,true,false,32.7,60.0
+302344d954fa2f8c,2025,2025-01-25T01:09:27.000000+0000,Moussa,Berry,WR,Western Kentucky,,5095915,moussa barry,WR,2024,55.0,false,false,false,true,false,32.7,60.0
+5a4015d76e6315b8,2025,2025-01-07T12:53:00.000000+0000,Reid,Williams,IOL,Chattanooga,UNLV,5223982,josh williams,WR,2024,70.0,true,false,false,false,false,31.3,60.0
+8b3029b07d16dbe0,2025,2025-04-24T22:09:00.000000+0000,Todd,Drummond,QB,Oklahoma State,Emporia State,4683010,bryce drummond,FB,2024,70.0,true,false,false,false,false,32.3,60.0
+fbb1696d38142b2e,2025,2025-05-29T11:05:00.000000+0000,Wyatt,Becker,QB,Utah,Princeton,4699353,cole becker,PK,2024,70.0,true,false,false,false,false,32.7,60.0
+4eded257994fa7f6,2022,2021-12-27T17:51:00.000000+0000,Tres,Barboza,OT,UTEP,UConn,4689884,gamaliel tres barboza,OL,2020,74.7,true,false,true,true,false,71.7,59.7
+e58e3d232a676c33,2022,2022-03-28T17:49:00.000000+0000,Jakelyn,Morgan,CB,Arizona,Louisiana Tech,4570290,jordan morgan,OL,2021,84.6,true,true,true,false,false,84.6,59.6
+107a3aee4094303b,2022,2022-06-28T14:30:00.000000+0000,Lyn-J,Dixon,RB,West Virginia,Tennessee,4427079,lance dixon,LB,2021,84.0,true,true,true,false,false,72.2,59.0
+4e09f3d3ee0d75cd,2022,2021-09-30T17:23:00.000000+0000,Dink,Jackson,S,Ole Miss,,4426463,dannis jackson,WR,2021,84.0,true,true,true,false,false,74.4,59.0
+17d094622b6ec883,2022,2022-01-10T20:54:00.000000+0000,Naquan,Reynolds,S,Marshall,,4370360,naquan renalds,S,2021,53.8,false,false,false,true,false,29.0,58.8
+268133bb8c1ce776,2023,2022-12-24T02:33:00.000000+0000,L'Christian,Smith,WR,Cincinnati,Western Kentucky,4686343,braden smith,WR,2023,73.8,true,false,true,true,false,73.8,58.8
+db3e78319910d23d,2024,2024-04-14T02:10:00.000000+0000,Anthony,Johnson,DL,Illinois,Pittsburgh,4880012,ryan johnson,QB,2022,73.6,true,false,false,false,false,37.5,58.6
+8f11957c9dfd0e13,2025,2025-01-11T17:21:00.000000+0000,Cory,Hall,EDGE,Northern Arizona,UNLV,4731633,draycen hall,RB,2023,73.6,true,false,false,false,false,34.3,58.6
+dcf24930de57178f,2025,2025-05-01T23:18:00.000000+0000,Jayden,Davis,S,Sacramento State,Western Michigan,5086897,diego davis,LB,2025,73.6,true,false,false,false,false,45.7,58.6
+2202241c94671706,2022,2022-03-01T22:20:00.000000+0000,Jacobi,Moore,WR,Mississippi State,Ole Miss,4751683,khalid moore,DL,2022,73.3,true,false,false,false,false,33.6,58.3
+61c89337b4a9588d,2022,2022-02-07T16:48:00.000000+0000,Isaiah,Johnson,CB,Dartmouth,Syracuse,5085516,jabari johnson,DE,2022,73.3,true,false,false,false,false,36.5,58.3
+def283328c3288bf,2022,2021-12-06T20:53:00.000000+0000,Isaiah,Johnson,CB,Dartmouth,Syracuse,5085516,jabari johnson,DE,2022,73.3,true,false,false,false,false,36.5,58.3
+e069cb574c551c80,2024,2024-03-18T05:00:00.000000+0000,Kardell,Thomas,IOL,Florida A&M,,5083830,jalik thomas,DB,2022,73.3,true,false,false,false,false,36.0,58.3
+84dca0df826e1b7f,2025,2025-04-24T12:38:00.000000+0000,Stephen,Johnson,DL,McNeese,South Alabama,4883676,jalen johnson,WR,2023,73.3,true,false,false,false,false,35.6,58.3
+b04a6e8a8d3e13f3,2025,2025-04-22T22:23:00.000000+0000,Darius,Thomas,LB,Louisville,Oklahoma State,4812383,tawfiq thomas,DT,2023,73.3,true,false,false,false,false,36.9,58.3
+d8d2d7345ebdb475,2025,2024-12-24T17:51:00.000000+0000,Josiah,Kennard,LS,East Texas A&M,James Madison,5230137,samuel kennard,OL,2025,73.3,true,false,false,false,false,33.6,58.3
+4ac76e501c2a2f29,2026,2026-02-02T22:53:00.000000+0000,Jonathan,Watts,S,Idaho State,San José State,5158766,adam watts,WR,2024,73.3,true,false,false,false,false,36.9,58.3
+784f4df7a1acd595,2026,2026-01-19T16:29:00.000000+0000,Cam,Williams,DL,Clark Atlanta,Coastal Carolina,5441105,tim williams,,2026,73.3,true,false,true,true,false,71.8,58.3
+417233786b85dae1,2022,2022-04-07T02:47:00.000000+0000,Jackson,Bailey,LB,Arizona,UL Monroe,4027927,steven bailey,OL,2020,73.1,true,false,false,false,false,40.0,58.1
+c34322209a6c63ea,2022,2022-04-14T00:14:00.000000+0000,Jacob,Coleman,TE,East Carolina,Middle Tennessee,4574740,jonathan coleman,S,2021,83.1,true,true,true,false,false,72.5,58.1
+b7e501d4e51319fb,2023,2023-04-24T14:06:00.000000+0000,Dearis,Thomas,LB,Florida Atlantic,,4685581,richard thomas,DL,2023,73.1,true,false,false,false,false,38.7,58.1
+9af2b343bdeae78d,2025,2025-01-01T22:11:00.000000+0000,Mari,Smith,WR,Tulsa,Central Arkansas,5091840,damari smith,DB,2024,78.0,true,false,true,false,true,72.5,58.0
+6506a15b0b642bb9,2023,2022-12-05T20:22:00.000000+0000,Barry,Wagner,WR,Western Kentucky,,4690096,bj wagner,S,2022,82.9,true,true,true,false,false,82.9,57.9
+9420d20fe5a56aa6,2025,2025-01-11T04:33:00.000000+0000,Anthony,James,DL,Eastern Washington,Northwestern State,4570788,jakobie james,WR,2023,72.9,true,false,false,false,false,41.5,57.9
+f8ef477a08b6230b,2023,2022-12-04T03:56:00.000000+0000,Nonte,Davis,WDE,UT Martin,Western Kentucky,4379818,kenyonte davis,DL,2022,77.7,true,false,true,false,true,73.1,57.7
+3e3168e6c2234847,2025,2025-04-28T20:49:00.000000+0000,Gavin,Edwards,S,Austin Peay,Maryland,5092821,eli edwards,OL,2025,72.5,true,false,false,false,false,31.3,57.5
+6ce0d880c23b4337,2025,2025-01-02T00:13:00.000000+0000,Christopher,Martin,QB,Alcorn State,Tuskegee,5300427,trevon martin,WR,2025,72.4,true,false,false,false,false,38.8,57.4
+a61d4e8504bb730b,2023,2022-12-21T14:27:00.000000+0000,Anthony,Lewis Jr.,WR,Troy,,4362738,aj lewis,TE,2022,82.2,true,true,true,false,false,71.7,57.2
+7eb1a3fbe8507c68,2025,2025-04-29T00:16:00.000000+0000,Joey,Wright,OT,Sacramento State,,5082213,deven wright,LB,2025,72.2,true,false,false,false,false,30.0,57.2
+f9603aa52e674d15,2021,2021-03-31T00:00:00.000000+0000,Devon,King,S,Marshall,East Carolina,4261908,tyler king,RB,2019,72.0,true,false,false,false,false,32.7,57.0
+dfc50c82ccdd42d4,2023,2023-04-15T18:42:00.000000+0000,Cam,Kelly,S,Virginia,Louisville,4370796,tavares kelly,WR,2021,72.0,true,false,false,false,false,34.3,57.0
+4e757975383a46dc,2024,2024-04-23T14:59:00.000000+0000,Will,Norman,DL,Marshall,,4249034,isaiah norman,S,2022,72.0,true,false,false,false,false,36.0,57.0
+51ccd23d44a64254,2024,2024-04-22T13:19:00.000000+0000,Reese,Mooney,QB,North Texas,UL Monroe,4360920,ethan mooney,PK,2022,72.0,true,false,false,false,false,31.3,57.0
+b33c11dadb4c9a6e,2024,2024-04-18T01:04:00.000000+0000,Peny,Boone,RB,Louisville,UCF,4360816,adonis boone,OL,2022,72.0,true,false,false,false,false,34.3,57.0
+c5954814f1006263,2024,2024-04-18T12:43:00.000000+0000,Jason,Moore,DL,Temple,,4360988,isaac moore,OL,2022,72.0,true,false,false,false,false,36.5,57.0
+5b14e83c1f0526e4,2025,2025-04-24T22:16:00.000000+0000,Wyatt,Wright,LB,Arkansas State,,5222574,aidan wright,LB,2025,72.0,true,false,true,true,false,71.8,57.0
+20e41dd9584e92f8,2021,2020-08-26T00:00:00.000000+0000,Isaiah,Bean,EDGE,Kansas,,4360900,jason bean,QB,2021,71.8,true,false,false,false,false,36.0,56.8
+d08878a2c2448c2a,2022,2022-01-12T18:37:00.000000+0000,Naquan,Brown,EDGE,Pittsburgh,Norfolk State,4426797,paris brown,RB,2020,71.8,true,false,false,false,false,31.3,56.8
+9bacb0d99b028373,2023,2023-01-11T14:22:00.000000+0000,Rickey,Smith,LB,Purdue,,4372487,kadin smith,DB,2021,71.8,true,false,false,false,false,31.3,56.8
+41edc5227c49fb38,2025,2025-04-22T22:29:00.000000+0000,Quincy,Wright,DL,North Texas,Arkansas State,4683223,chris wright,LB,2023,71.8,true,false,false,false,false,34.3,56.8
+9bd31d4861dc577d,2025,2025-05-14T14:20:00.000000+0000,Jayme,Simmons,OT,North Alabama,Akron,5224317,dawson simmons,QB,2025,71.8,true,false,false,false,false,44.4,56.8
+13bb50bf4528d3b9,2021,2020-11-16T00:00:00.000000+0000,Brady,Martin,QB,Rhode Island,Arkansas State,4578104,jarrett martin,LB,2021,71.7,true,false,false,false,false,34.3,56.7
+f2e18ae0e3da1bf1,2022,2022-01-12T00:32:00.000000+0000,Brylan,Lanier,CB,Alabama,Indiana,4050499,joshua lanier,WR,2020,71.7,true,false,false,false,false,35.0,56.7
+b634b710ae7644f3,2024,2023-11-30T17:49:00.000000+0000,Malik,Dixon,S,UConn,,4574776,russell dixon,TE,2022,71.7,true,false,false,false,false,42.6,56.7
+1479ea6e59c92e76,2025,2025-04-24T20:28:00.000000+0000,Kaden,Brown,QB,Louisiana Tech,Trinity Valley C.C.,5159118,russell brown,P,2023,71.7,true,false,false,false,false,35.0,56.7
+d16f25981b4e85b7,2025,2025-04-19T17:25:00.000000+0000,Zachary,Rogers,CB,Toledo,,4362273,devan rogers,OL,2023,71.7,true,false,false,false,false,46.2,56.7
+fddc010e000dd88b,2025,2025-05-02T21:26:00.000000+0000,Jordan,Dunbar,CB,Bowling Green,Missouri State,4383363,cedric dunbar,G,2023,71.7,true,false,false,false,false,35.6,56.7
+20e52f44aef656cd,2022,2022-01-05T14:47:00.000000+0000,Dreshun,Miller,CB,Auburn,NC State,4371987,coynis miller,DT,2020,71.5,true,false,false,false,false,35.6,56.5
+520611c5da672f71,2021,2020-09-16T00:00:00.000000+0000,Brandon,Taylor,DL,Penn State,,3929657,garrett taylor,S,2019,71.4,true,false,false,false,false,40.0,56.4
+3821483e44bd2856,2025,2025-02-05T06:00:00.000000+0000,Cameron,Williams,IOL,Alabama A&M,Kennesaw State,5300003,cayden williams,LB,2025,86.2,true,true,true,false,false,75.0,56.2
+c8259279dd16e3c1,2026,2025-12-08T03:38:00.000000+0000,Nate,Johnson,WR,Boston College,,5160642,nathaniel johnson,CB,2024,86.2,true,true,true,false,false,72.5,56.2
+fe098a3bc78dc815,2021,2021-01-26T00:00:00.000000+0000,Jason,Brown,PRO,Saint Francis,South Carolina,4367962,jalen brown,DL,2021,86.0,true,true,true,false,false,71.8,56.0
+0d527e54c8fbd4a7,2024,2023-12-08T14:33:00.000000+0000,Jelon,Johnson,WR,Temple,,5086869,jamel johnson,CB,2024,86.0,true,true,true,false,false,72.2,56.0
+59a914c9646afad1,2025,2025-03-21T14:24:00.000000+0000,Jalen,Thomas,DL,LSU,,5209113,jhase thomas,S,2025,86.0,true,true,true,false,false,74.0,56.0
+9a60b7807cc795f2,2022,2021-12-03T06:00:00.000000+0000,JJ,Jones,TE,Dartmouth,New Mexico State,4878218,q jones,RB,2022,70.0,true,false,false,false,false,32.7,55.0
+7c6c18003c0f0fc1,2023,2023-04-21T18:18:00.000000+0000,Brooks,Maile,SDE,BYU,Northern Colorado,4361015,paul maile,OL,2023,70.0,true,false,false,false,false,36.0,55.0
+b5ff4f2c9dea57b1,2025,2025-04-24T02:59:00.000000+0000,Gevani,McCoy,QB,Texas State,Temple,4689942,brooks mccoy,WR,2023,70.0,true,false,false,false,false,32.3,55.0
+b96c99f41359b284,2025,2025-01-08T21:52:00.000000+0000,Trey,Harris,S,Cornell,Sam Houston,5225034,kamal harris,OL,2025,70.0,true,false,false,false,false,32.7,55.0
+ca3818e54d681d7d,2025,2025-01-08T18:26:00.000000+0000,Nick,Bakken,OT,South Dakota State,Washington State,5301786,beau bakken,LB,2025,70.0,true,false,false,false,false,30.0,55.0
+d01014a778517308,2025,2025-04-23T00:06:00.000000+0000,Breylan,Thompson,CB,Yale,Stanford,4883132,cj thompson,WR,2023,70.0,true,false,false,false,false,38.6,55.0
+ed417ee9ea3000fe,2025,2025-04-22T17:16:00.000000+0000,Tyrell,Green,IOL,Eastern Kentucky,Purdue,5224228,cj green,LB,2025,70.0,true,false,false,false,false,33.6,55.0
+3f09e18ed67ee698,2022,2021-11-10T21:28:00.000000+0000,Jarren,Williams,QB,South Florida,Alabama A&M,4912360,jacquez williams,DL,2022,84.6,true,true,true,false,false,74.6,54.6
+61577a2ad74bf308,2021,2020-11-22T00:00:00.000000+0000,Jesse,Johnson,CB,Eastern Illinois,,4570858,jason johnson,LB,2021,84.0,true,true,true,false,false,71.8,54.0
+3a48e302399ca38f,2022,2022-02-01T22:20:00.000000+0000,JoJo,Johnson,CB,Notre Dame,,4689632,jordan johnson,WR,2020,84.0,true,true,true,false,false,70.0,54.0
+31e9f846008cd93a,2024,2023-12-04T16:07:00.000000+0000,Davon,Graham II,CB,Oklahoma,Utah State,5081931,darius graham,DL,2022,83.6,true,true,true,false,false,82.9,53.6
+3ac2d84111199012,2025,2025-04-25T15:45:00.000000+0000,Jax,Brown,QB,Sam Houston,Arkansas State,4910843,jadarius brown,DB,2023,83.6,true,true,true,false,false,74.0,53.6
+642fa67a5803e26f,2023,2023-04-28T20:08:00.000000+0000,Jibran,Hawkins,DL,Ole Miss,Colorado,4372420,jakorey hawkins,CB,2021,83.1,true,true,true,false,false,82.5,53.1
+57fcb928c9e494f3,2021,2020-12-21T00:00:00.000000+0000,Andrew,Leota,EDGE,Northwestern,Auburn,4361272,eku leota,LB,2020,72.2,true,false,true,false,true,72.2,52.2
+77933a3c3f3757c7,2022,2022-01-25T17:48:00.000000+0000,Jacob,Sykes,DL,Harvard,UCLA,4878254,jacob psyk,DL,2022,51.4,false,false,false,true,false,40.0,51.4
+71c1f780a128608c,2025,2025-04-26T02:32:00.000000+0000,Zion,Jones,S,UTSA,Houston Christian,4680602,jon jones,DL,2024,75.7,true,false,true,false,false,75.7,50.7
+f3fdcb943f5d601f,2022,2022-05-15T16:43:00.000000+0000,Kaine,Williams,S,Alabama,Nebraska,4372015,xavier williams,WR,2021,75.5,true,false,true,false,false,73.3,50.5
+4d319f818a3c3852,2023,2023-04-21T20:32:00.000000+0000,Davon,Ferguson,CB,Georgia Southern,,4361384,jon ferguson,LB,2022,75.0,true,false,true,false,false,74.0,50.0
+9edfa19669f984f3,2026,2026-01-07T18:19:00.000000+0000,JaCorey,Stewart,LB,Kansas,Florida International,5126514,harry stewart,RB,2025,75.0,true,false,true,false,false,73.1,50.0
+7324ca56cb18a76d,2025,2025-05-04T19:12:00.000000+0000,Lorenzo,Smith,S,South Alabama,New Mexico State,5160228,dorian smith,RB,2024,74.6,true,false,true,false,false,73.1,49.6
+59d11734ae699f62,2024,2024-04-26T05:00:00.000000+0000,Dermaricus,Davis,QB,Washington,UCLA,4918439,elinneus davis,DL,2023,74.4,true,false,true,false,false,73.5,49.4
+6a44333ecd203801,2025,2025-05-07T17:12:00.000000+0000,Antoineo,Harris Jr.,EDGE,Utah State,UConn,4715346,simeon harris,DB,2024,74.3,true,false,true,false,false,71.7,49.3
+0b759cca775d8813,2024,2024-05-01T14:55:00.000000+0000,Craig,Williams,RB,Louisiana Tech,,4428876,rason williams,DL,2023,74.0,true,false,true,false,false,74.0,49.0
+2ba84045537ba0d9,2024,2024-04-16T14:40:00.000000+0000,Domonique,Thomas,RB,Georgia State,Ole Miss,4871071,quentin thomas,WR,2023,73.8,true,false,true,false,false,71.3,48.8
+daae758b74db85fb,2025,2025-01-13T23:58:00.000000+0000,Nevell,Brown,IOL,Alabama A&M,New Mexico,4568411,cornelious brown,QB,2024,73.8,true,false,true,false,false,71.8,48.8
+e5775cdeb2d5fea4,2024,2024-04-30T15:24:00.000000+0000,Gabe,Johnson,DL,Washington State,,4373746,cameron johnson,TE,2023,73.6,true,false,true,false,false,72.2,48.6
+03f49c1c9f8f0ec1,2025,2025-04-24T19:50:00.000000+0000,Dasheen,Jackson,S,UAB,,5084904,josh jackson,WR,2024,73.6,true,false,true,false,false,73.3,48.6
+21489ef6091c5a0c,2022,2021-11-22T16:47:00.000000+0000,Jakari,Robinson,IOL,Memphis,,4608821,kajuan robinson,DL,2021,73.3,true,false,true,false,false,70.0,48.3
+cecc55a94635b149,2024,2024-05-01T14:46:00.000000+0000,Jason,Harris,EDGE,Marshall,,4429751,demarcus harris,WR,2023,73.1,true,false,true,false,false,70.0,48.1
+2351352f0045d101,2025,2025-06-09T23:04:42.000000+0000,Zavier,Carter,LB,UCF,Georgia State,5152182,michael carter,P,2024,73.1,true,false,true,false,false,71.8,48.1
+39c9ee52b5597014,2025,2025-05-26T05:57:00.000000+0000,Jelani,Davis,DL,Southern,Kent State,5083971,quaydarius davis,WR,2024,72.5,true,false,true,false,false,71.5,47.5
+c57f0f2c3c5e5998,2025,2025-05-08T19:15:00.000000+0000,Jaffer,Murphy,K,North Carolina,UTSA,5081421,cj murphy,DL,2024,72.5,true,false,true,false,false,71.8,47.5
+dcf84bbe49e3695e,2026,2025-12-03T13:58:38.000000+0000,Xavier,Esquillen,EDGE,Savannah State,Georgia State,5166484,xavier esqillion,LB,2025,52.5,false,false,false,false,true,27.1,47.5
+4ef1931009cc2f99,2022,2022-04-28T14:32:00.000000+0000,Timar,Rogers,LB,Mississippi State,Middle Tennessee,4566196,will rogers,QB,2021,72.2,true,false,true,false,false,72.2,47.2
+f2583cf27f6a6161,2022,2022-04-29T20:18:00.000000+0000,Seth,Smith,QB,Marshall,,4571620,jeremy smith,S,2021,72.0,true,false,true,false,false,72.0,47.0
+5807373a2a059096,2025,2025-05-01T18:27:00.000000+0000,Khmari,Johnson,LB,Austin Peay,Florida Atlantic,4896167,jake johnson,QB,2024,72.0,true,false,true,false,false,71.8,47.0
+a65aeec98cdb56a4,2025,2025-05-10T01:48:00.000000+0000,Quincy,Brown,WR,Texas State,Florida Atlantic,4725503,tyrese brown,RB,2024,71.7,true,false,true,false,false,71.5,46.7
+e9fd9a49a11f34ae,2025,2025-05-19T18:03:00.000000+0000,Jaquez,Smith,WR,Missouri State,Southwest Baptist,4585551,darion smith,DL,2024,71.7,true,false,true,false,false,71.7,46.7
+96ccb2fcd16d767b,2023,2023-01-23T16:06:00.000000+0000,Jeremiah,Smith,S,Georgia Tech,,4360589,dontae smith,RB,2022,71.4,true,false,true,false,false,71.4,46.4
+76fb4783a7bd1451,2025,2025-06-01T05:00:00.000000+0000,JaKolby,Jones,OT,Georgia Tech,,5075806,shymeik jones,DT,2024,71.4,true,false,true,false,false,70.0,46.4
+30910089a3baef60,2023,2022-12-05T22:07:00.000000+0000,Simeon,Smith,WR,Michigan,,4690297,peyton smith,QB,2021,75.0,true,false,true,false,false,72.0,45.0
+4c454bab5413594d,2025,2024-12-18T17:51:00.000000+0000,Amir,Johnson,OT,Merrimack,Boston College,4878989,mike johnson,LB,2023,75.0,true,false,true,false,false,72.0,45.0
+fa0252d9f515dd3d,2026,2026-01-31T21:37:00.000000+0000,Jamal,Cooney,WR,Dartmouth,Northwestern State,5085502,jamal cooper,S,2025,50.0,false,false,false,false,true,32.3,45.0
+a43bbcfe772589f2,2025,2025-04-25T00:19:00.000000+0000,Montreze,Smith Jr.,LB,Western Kentucky,Austin Peay,5214450,fonzy smith,WR,2025,74.6,true,false,true,false,false,73.1,44.6
+ad6ba8c97e484eb9,2025,2025-05-03T15:29:00.000000+0000,Javen,Johnson,DL,Hampton,Coastal Carolina,4683136,taeshaun johnson,WR,2025,74.6,true,false,true,false,false,74.0,44.6
+769b9f9afe216c42,2025,2024-12-30T18:50:00.000000+0000,Tray,Franklin,OT,South Carolina State,Coastal Carolina,3928375,jordan franklin,LB,2025,74.0,true,false,true,false,false,71.4,44.0
+824151ea9440d3c5,2026,2026-01-16T03:50:00.000000+0000,Ja'Mard,Jones Jr.,OT,Nicholls,LSU,5439294,kasai jones,DB,2026,73.6,true,false,true,false,false,71.5,43.6
+bc2e030372fe1f5d,2024,2024-04-18T18:16:00.000000+0000,Bryan,Henry,TE,Houston,Abilene Christian,4362161,tazhawn henry,RB,2022,73.3,true,false,true,false,false,72.2,43.3
+4992bb7cd4890d44,2025,2025-04-22T15:36:00.000000+0000,Elijah,Brown,CB,Arizona,Colorado State,4879662,jordan brown,OL,2025,73.3,true,false,true,false,false,72.0,43.3
+e98d1b9fa3da0e47,2025,2025-04-25T16:11:00.000000+0000,Elijah,Brown,TE,UCF,Kentucky,4685294,jyaire brown,DB,2025,73.3,true,false,true,false,false,73.1,43.3
+fbf004d87ba5f764,2022,2021-12-08T19:23:00.000000+0000,Leslie,Smith,LB,Pittsburgh,,4240704,michael smith,WR,2020,73.1,true,false,true,false,false,72.0,43.1
+99d23d9378b4299a,2022,2021-11-26T19:02:00.000000+0000,Jesiah,Davis,WR,Virginia,,4570682,devontae davis,DL,2022,72.9,true,false,true,false,false,71.8,42.9
+a28ea82d0dcc16c6,2024,2024-04-21T05:00:00.000000+0000,DJ,Allen,EDGE,Purdue,Memphis,4685691,brady allen,QB,2022,72.9,true,false,true,false,false,70.0,42.9
+b7c82569f29f0173,2024,2024-04-16T22:30:00.000000+0000,Derrick,Graham,IOL,Texas A&M,Tulane,5228137,jackson graham,LS,2024,72.9,true,false,true,false,false,71.8,42.9
+96147ca34d31c17f,2021,2021-05-27T00:00:00.000000+0000,Chad,Brown,S,UCF,Nevada,3929032,jake brown,OL,2019,72.5,true,false,true,false,false,72.0,42.5
+5c3dfdf038c369af,2022,2021-08-31T18:07:00.000000+0000,Nick,Lewis,OT,Arkansas State,,4898321,carl lewis,RB,2022,72.5,true,false,true,false,false,72.2,42.5
+f6b4a60f8146b7f7,2025,2024-12-23T22:29:00.000000+0000,Kyle,Brown,IOL,Dartmouth,Massachusetts,5085498,zyion brown,LB,2025,72.2,true,false,true,false,false,70.0,42.2
+b24c7c5ef1331de0,2022,2022-02-22T14:38:00.000000+0000,Bishop,Johnson,RB,Army,,4240949,mike johnson,OL,2020,72.0,true,false,true,false,false,70.0,42.0
+1ea5f8c5959047f4,2024,2024-01-17T16:04:00.000000+0000,Audric,Harris,WR,Arizona,Washington,4259370,jalen harris,DL,2022,71.8,true,false,true,false,false,71.8,41.8
+f2914b7250bb60b9,2025,2025-05-02T16:10:00.000000+0000,Jordon,Simmons,RB,Ole Miss,Georgia State,4685704,larry simmons,WR,2023,71.8,true,false,true,false,false,71.7,41.8
+ee521748c32c7f0b,2022,2021-09-16T19:10:00.000000+0000,Bless,Harris,OT,Lamar,Florida State,4879455,damashja harris,RB,2022,71.5,true,false,true,false,false,70.0,41.5
+ded1817a7a787240,2024,2024-04-17T13:58:00.000000+0000,Derrick,Brown,LB,Texas State,,4725503,tyrese brown,RB,2024,71.5,true,false,true,false,false,71.4,41.5
+6010a7db61d5993d,2025,2025-06-15T18:52:00.000000+0000,Romando,Johnson,EDGE,West Virginia,Massachusetts,4569663,justin johnson,RB,2023,71.5,true,false,true,false,false,70.0,41.5
+b9d6bfd38724a2b4,2025,2025-04-22T05:00:00.000000+0000,Joedrick,Lewis,CB,Arkansas State,Ball State,4880280,kadan lewis,DL,2023,71.5,true,false,true,false,false,71.4,41.5
+eab3929ccc222fd2,2024,2024-04-29T15:18:00.000000+0000,Emmonte,Davis,CB,Louisiana Tech,Incarnate Word,5156287,christian davis,DL,2024,71.2,true,false,true,false,false,70.0,41.2
+6702f70244f54253,2026,2026-01-13T17:03:00.000000+0000,Da'Jy'Quwan,Jackson-Payne,OT,Liberty,Southern Miss,5296298,dajyquwan jackson,OL,2025,51.0,false,false,true,true,false,36.4,41.0
+e0760ff6abf0cf7b,2024,2023-12-04T16:50:00.000000+0000,Jonah,Jensen,S,Air Force,Hillsdale College,4708478,jensen jones,QB,2023,50.0,false,false,false,false,false,40.0,40.0
+5b263a129396ed5e,2025,2025-01-24T18:29:00.000000+0000,Beau,Baker,TE,South Dakota State,Washington State,5301786,beau bakken,LB,2025,51.4,false,false,false,false,false,33.6,36.4
