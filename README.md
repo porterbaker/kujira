@@ -1,5 +1,5 @@
 # :whale:Kujira:whale:
-# College Football Player Value and Game Prediction
+### College Football Player Value and Game Prediction
 
 A two-stage model built on the [CollegeFootballData](https://collegefootballdata.com) API:
 
