@@ -14,16 +14,14 @@ import time
 from collections.abc import Callable
 from pathlib import Path
 
-import jax
 import jax.numpy as jnp
 import numpy as np
 import polars as pl
 from numpyro.diagnostics import summary
-from numpyro.infer import MCMC, NUTS
 
 from cfb.config import Settings
 from cfb.player_model.data import ROLES, Dataset, model_dir
-from cfb.player_model.fit import effects_from_samples, run_svi, sample_guide
+from cfb.player_model.fit import effects_from_samples, run_chains, run_svi, sample_guide
 from cfb.player_model.model import (SEASON_STEP_SCALES, WITHIN_SEASON_SCALES, ModelArrays, make_arrays, model,
                                     to_device)
 
@@ -57,18 +55,13 @@ def effect_table(a: ModelArrays, draws: dict[str, np.ndarray], method: str) -> p
 
 def run_nuts(a: ModelArrays, chains: int, warmup: int, samples: int, seed: int = 0) -> tuple[dict, dict]:
     st, d = to_device(a)
-    kernel = NUTS(functools.partial(model, st), target_accept_prob=0.85, max_tree_depth=8)
-    mcmc = MCMC(kernel, num_warmup=warmup, num_samples=samples, num_chains=chains,
-                chain_method="sequential", progress_bar=False)
     started = time.monotonic()
-    mcmc.run(jax.random.PRNGKey(seed), d, extra_fields=("diverging", "num_steps"))
-    extra = mcmc.get_extra_fields()
-    by_chain = mcmc.get_samples(group_by_chain=True)
-    keep = {k: np.asarray(v) for k, v in by_chain.items() if k in HYPER or k in EFFECT_SITES}
+    keep, extra = run_chains(functools.partial(model, st), d, chains, warmup, samples,
+                             set(HYPER) | set(EFFECT_SITES), seed)
     diag = {
         "seconds": time.monotonic() - started, "chains": chains, "warmup": warmup, "samples": samples,
-        "divergences": int(np.asarray(extra["diverging"]).sum()),
-        "mean_leapfrog_steps": float(np.asarray(extra["num_steps"]).mean()),
+        "divergences": int(extra["diverging"].sum()),
+        "mean_leapfrog_steps": float(extra["num_steps"].mean()),
         "sites": {},
     }
     stats = summary(keep, group_by_chain=True)
@@ -80,10 +73,18 @@ def run_nuts(a: ModelArrays, chains: int, warmup: int, samples: int, seed: int =
         diag["sites"][site] = {"size": int(rhat.size), "max_rhat": float(np.nanmax(rhat)),
                                "share_rhat_gt_1.01": float(np.mean(rhat > 1.01)), "min_ess": float(np.nanmin(ess)),
                                "median_ess": float(np.nanmedian(ess))}
+    # Per chain, to tell a stuck chain (one that never adapted) from slow mixing.
+    diag["per_chain"] = {"seed": seed, "divergences": extra["diverging"].sum(1).tolist(),
+                         "mean_leapfrog_steps": extra["num_steps"].mean(1).tolist(),
+                         **{k: v.mean(1).tolist() for k, v in keep.items() if k in HYPER and v.ndim == 2}}
     flat = {k: v.reshape(-1, *v.shape[2:]) for k, v in keep.items()}
     diag["hyper"] = {k: {"mean": float(v.mean()), "sd": float(v.std()), "median": float(np.median(v))}
                      for k, v in flat.items() if k in HYPER and v.ndim == 1}
     return flat, diag
+
+
+def worst_scale_rhat(diag: dict, names: tuple[str, ...]) -> float:
+    return max(diag["sites"][k]["max_rhat"] for k in names if k in diag["sites"] and "max_rhat" in diag["sites"][k])
 
 
 def season_label(seasons: tuple[int, ...]) -> str:
@@ -97,7 +98,8 @@ def nuts_scales(diag: dict, names: tuple[str, ...]) -> dict[str, float]:
 
 
 def run_validation(settings: Settings, seasons: tuple[int, ...], chains: int = 4, warmup: int = 500,
-                   samples: int = 500, svi_steps: int = 30000, log: Callable[[str], None] = print) -> Path:
+                   samples: int = 500, svi_steps: int = 30000, seed: int = 0,
+                   log: Callable[[str], None] = print) -> Path:
     """NUTS on `seasons`, then SVI three ways: every scale free (svi_normal), every scale held at the
     NUTS posterior mean (svi_fixed), and, with two or more seasons, only the within-season scales held
     (svi_partial, the as-of configuration)."""
@@ -110,10 +112,15 @@ def run_validation(settings: Settings, seasons: tuple[int, ...], chains: int = 4
     log(f"validation seasons {label}: {len(a.y):,} plays")
 
     log(f"NUTS: {chains} chains x ({warmup} warmup + {samples} draws), sequential")
-    draws, diag = run_nuts(a, chains, warmup, samples)
+    draws, diag = run_nuts(a, chains, warmup, samples, seed=seed)
     tables = [effect_table(a, draws, "nuts")]
-    log(f"  done in {diag['seconds'] / 60:.1f} min; divergences {diag['divergences']}")
+    worst = worst_scale_rhat(diag, WITHIN_SEASON_SCALES + SEASON_STEP_SCALES)
+    log(f"  done in {diag['seconds'] / 60:.1f} min; divergences {diag['divergences']}; worst scale R-hat {worst:.3f}; "
+        f"leapfrog steps by chain {[round(x) for x in diag['per_chain']['mean_leapfrog_steps']]}")
     del draws
+    if worst > MAX_SCALE_RHAT:  # a stuck chain makes NUTS a meaningless reference for SVI
+        (out / f"diagnostics_{label}_rejected_seed={seed}.json").write_text(json.dumps(diag, indent=1))
+        raise RuntimeError(f"NUTS did not converge (worst scale R-hat {worst:.3f}); rerun with another --seed")
 
     variants = {"svi_normal": {}, "svi_fixed": nuts_scales(diag, WITHIN_SEASON_SCALES + SEASON_STEP_SCALES)}
     if len(seasons) > 1:
@@ -154,17 +161,26 @@ def compare(effects: pl.DataFrame) -> pl.DataFrame:
 
 
 HYPER_WINDOW = 3  # seasons averaged for the scales of the next season's fits
+MAX_SCALE_RHAT = 1.1  # a scale fit worse than this is retried with a new seed, then rejected
+SCALE_FIT_ATTEMPTS = 2
 
 
 def hyper_dir(settings: Settings) -> Path:
     return model_dir(settings) / "hyper"
 
 
+def step_hyper_dir(settings: Settings) -> Path:
+    return model_dir(settings) / "hyper_step"
+
+
 def fit_hyper(settings: Settings, seasons: tuple[int, ...], chains: int = 4, warmup: int = 500, samples: int = 500,
-              log: Callable[[str], None] = print) -> None:
+              seed: int = 0, step: bool = False, log: Callable[[str], None] = print) -> None:
     """Single-season NUTS for each of `seasons` not yet fitted; writes hyper/season=YYYY.json with the
-    within-season scales. The as-of fits for season S average the HYPER_WINDOW seasons before S."""
-    out = hyper_dir(settings)
+    within-season scales. With `step`, two-season NUTS on (S-1, S) instead, written to hyper_step/season=S.json
+    with the season-step scales, which SVI shrinks as it does the within-season ones (2014-15 validation).
+    The as-of fits for season S average the HYPER_WINDOW fits before S."""
+    out = step_hyper_dir(settings) if step else hyper_dir(settings)
+    names = SEASON_STEP_SCALES if step else WITHIN_SEASON_SCALES
     out.mkdir(parents=True, exist_ok=True)
     todo = [s for s in seasons if not (out / f"season={s}.json").is_file()]
     if not todo:
@@ -172,13 +188,28 @@ def fit_hyper(settings: Settings, seasons: tuple[int, ...], chains: int = 4, war
         return
     ds = Dataset.load(model_dir(settings))
     for season in todo:
-        a = make_arrays(ds, ds.plays.filter(pl.col("season") == season), compact=True)
-        log(f"scale fit {season}: {len(a.y):,} plays; NUTS {chains} x ({warmup} + {samples})")
-        draws, diag = run_nuts(a, chains, warmup, samples)
-        del draws, a
-        scales = nuts_scales(diag, WITHIN_SEASON_SCALES)
-        worst = max(diag["sites"][k]["max_rhat"] for k in scales)
-        log(f"  done in {diag['seconds'] / 60:.1f} min; divergences {diag['divergences']}; worst scale R-hat {worst:.3f}")
+        span = (season - 1, season) if step else (season,)
+        a = make_arrays(ds, ds.plays.filter(pl.col("season").is_in(span)), compact=True)
+        for attempt in range(seed, seed + SCALE_FIT_ATTEMPTS):
+            log(f"scale fit {season_label(span)}: {len(a.y):,} plays; NUTS {chains} x ({warmup} + {samples}), seed {attempt}")
+            draws, diag = run_nuts(a, chains, warmup, samples, seed=attempt)
+            del draws
+            scales = nuts_scales(diag, names)
+            # Judged on the scales the file stores: a step fit's slow within-season scales (rush_tau_g) are not
+            # used from it, and its 2017-18 run was rejected on rush_tau_g alone with every step scale <= 1.023.
+            worst = worst_scale_rhat(diag, tuple(scales))
+            log(f"  done in {diag['seconds'] / 60:.1f} min; divergences {diag['divergences']}; worst scale R-hat {worst:.3f}; "
+                f"leapfrog steps by chain {[round(x) for x in diag['per_chain']['mean_leapfrog_steps']]}")
+            if worst <= MAX_SCALE_RHAT:
+                break
+            # Kept for inspection under a name load_hyper's season=*.json glob does not match.
+            (out / f"rejected_season={season}_seed={attempt}.json").write_text(
+                json.dumps({"season": season, "scales": scales, "nuts": diag}, indent=1))
+            log(f"  rejected: worst scale R-hat {worst:.3f} > {MAX_SCALE_RHAT}")
+        else:
+            log(f"  no scale file for {season} after {SCALE_FIT_ATTEMPTS} attempts")
+            continue
+        del a
         path = out / f"season={season}.json"
         path.write_text(json.dumps({"season": season, "scales": scales, "nuts": diag}, indent=1))
         log(f"wrote {path}")
@@ -194,10 +225,15 @@ def load_hyper(settings: Settings, directory: Path | None = None) -> dict[int, d
 
 
 def scales_for(hyper: dict[int, dict[str, float]], season: int, burn_in: tuple[int, ...],
-               window: int = HYPER_WINDOW) -> tuple[tuple[int, ...], dict[str, float]]:
+               window: int = HYPER_WINDOW, first: int | None = None) -> tuple[tuple[int, ...], dict[str, float]]:
     """Scales for season S's as-of fits: the mean of the scale fits from the `window` seasons before S.
-    A burn-in season with no earlier fit uses its own (its fits are never evaluated)."""
-    used = tuple(y for y in range(season - window, season) if y >= min(burn_in))
+    A burn-in season with no earlier fit uses its own (its fits are never evaluated). `first` is the first
+    season a fit can exist for (default the first burn-in season; step fits start a season later); a season
+    before it has no scales, which are then left free."""
+    first = min(burn_in) if first is None else first
+    if season < first:
+        return (), {}
+    used = tuple(y for y in range(season - window, season) if y >= first)
     if not used and season in burn_in:
         used = (season,)
     missing = [y for y in used if y not in hyper]

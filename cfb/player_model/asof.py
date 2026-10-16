@@ -31,7 +31,7 @@ from cfb.config import Settings
 from cfb.player_model.data import ROLES, Dataset, cutoff_date, model_dir, transfer_indicator
 from cfb.player_model.fit import effects_from_samples, heldout_loglik, run_svi, sample_guide, subset_plays
 from cfb.player_model.model import context_model, make_arrays, to_device
-from cfb.player_model.validate import load_hyper, scales_for
+from cfb.player_model.validate import load_hyper, scales_for, step_hyper_dir
 
 EFFECT_SITES = ["O", "D", *(f"{r}_{x}" for r in ROLES for x in ("c", "s", "alpha", "tau_s"))]
 
@@ -126,13 +126,17 @@ def run_asof(settings: Settings, seasons: tuple[int, ...] | None = None, *, cade
     a = make_arrays(ds, ds.plays, compact=False)
     st, d = to_device(a)
     hyper = load_hyper(settings)
+    step_hyper = load_hyper(settings, step_hyper_dir(settings))
+    burn_in = settings.model.burn_in_seasons
     state_path = out / "last_params.pkl"
     params = pickle.loads(state_path.read_bytes()) if state_path.is_file() else None
     ctx_params = None
-    log(f"as-of plan: {len(plan)} fits, {st.n_plays:,} plays in the layout; scale fits for {sorted(hyper)}")
+    log(f"as-of plan: {len(plan)} fits, {st.n_plays:,} plays in the layout; scale fits for {sorted(hyper)}, "
+        f"step scale fits for {sorted(step_hyper)}")
     for season, week in plan:
-        _, scales = scales_for(hyper, season, settings.model.burn_in_seasons)
-        d["fixed"] = {k: jnp.float32(v) for k, v in scales.items()}
+        _, scales = scales_for(hyper, season, burn_in)
+        _, steps = scales_for(step_hyper, season, burn_in, first=min(burn_in) + 1)
+        d["fixed"] = {k: jnp.float32(v) for k, v in {**scales, **steps}.items()}
         tag = f"season={season}_week={week:02d}"
         if (out / "fits" / f"{tag}.parquet").is_file():
             continue

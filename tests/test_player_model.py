@@ -95,6 +95,24 @@ def test_fixed_scales_are_held_not_sampled(ds):
         set(M.WITHIN_SEASON_SCALES) | set(M.SEASON_STEP_SCALES)
 
 
+def test_run_chains_keeps_only_requested_sites_per_chain():
+    import numpyro
+    import numpyro.distributions as dist
+
+    from cfb.player_model.fit import run_chains
+
+    def toy(d):
+        tau = numpyro.sample("tau", dist.HalfNormal(1.0))
+        z = numpyro.sample("z", dist.Normal(0, 1).expand([3]).to_event(1))
+        numpyro.deterministic("big", tau * z)
+        numpyro.sample("y", dist.Normal(z.sum(), 1.0), obs=d["y"])
+
+    draws, extra = run_chains(toy, {"y": jnp.float32(0.5)}, chains=2, warmup=20, samples=10, keep={"tau"})
+    assert set(draws) == {"tau"} and draws["tau"].shape == (2, 10)
+    assert extra["diverging"].shape == extra["num_steps"].shape == (2, 10)
+    assert not np.allclose(draws["tau"][0], draws["tau"][1])  # each chain has its own key
+
+
 def test_hyper_guard_blocks_scales_from_the_fit_season_or_later():
     from cfb.player_model.validate import check_hyper_asof, scales_for
 
@@ -116,16 +134,34 @@ def test_hyper_guard_blocks_scales_from_the_fit_season_or_later():
         scales_for({y: hyper[y] for y in (2014, 2015, 2017)}, 2018, (2014,))
 
 
-def _write_hyper(settings, seasons):
-    import json
-    from cfb.player_model.validate import hyper_dir
+def test_step_scales_come_from_season_pairs_ending_before_the_fit_season():
+    from cfb.player_model.validate import scales_for
 
-    hyper_dir(settings).mkdir(parents=True, exist_ok=True)
-    for f in hyper_dir(settings).glob("*.json"):
+    burn_in = (2014, 2015)
+    step = {y: {"pass_tau_s": float(y - 2000)} for y in range(2015, 2020)}  # keyed by the pair's last season
+
+    def for_season(s):
+        return scales_for(step, s, burn_in, first=2015)
+
+    assert for_season(2014) == ((), {})  # no pair can end by 2014: left free
+    assert for_season(2015) == ((2015,), {"pass_tau_s": 15.0})  # burn-in: its own pair, never evaluated
+    assert for_season(2016) == ((2015,), {"pass_tau_s": 15.0})
+    assert for_season(2019) == ((2016, 2017, 2018), {"pass_tau_s": 17.0})
+    with pytest.raises(ValueError):  # an evaluated season may not use the pair that contains it
+        scales_for({2016: step[2016]}, 2016, burn_in, first=2015)
+
+
+def _write_hyper(settings, seasons, step=False):
+    import json
+    from cfb.player_model.validate import hyper_dir, step_hyper_dir
+
+    out, names = (step_hyper_dir(settings), M.SEASON_STEP_SCALES) if step else (hyper_dir(settings), M.WITHIN_SEASON_SCALES)
+    out.mkdir(parents=True, exist_ok=True)
+    for f in out.glob("*.json"):
         f.unlink()
     for y in seasons:
-        (hyper_dir(settings) / f"season={y}.json").write_text(json.dumps(
-            {"season": y, "scales": {k: 0.05 if "tau" in k else 0.3 for k in M.WITHIN_SEASON_SCALES}}))
+        (out / f"season={y}.json").write_text(json.dumps(
+            {"season": y, "scales": {k: 0.05 if "tau" in k else 0.3 for k in names}}))
 
 
 def test_asof_pipeline_end_to_end(tmp_path_factory):
@@ -144,6 +180,9 @@ def test_asof_pipeline_end_to_end(tmp_path_factory):
     with pytest.raises(ValueError, match="no scale fit"):  # 2024's own scales may not inform 2024 fits
         run_asof(settings, (2024, 2025), cold_steps=60, warm_steps=20, draws=8, log=lambda m: None)
     _write_hyper(settings, (2021, 2022, 2023, 2024))
+    with pytest.raises(ValueError, match="no scale fit"):  # the season-step scales are required too
+        run_asof(settings, (2024, 2025), cold_steps=60, warm_steps=20, draws=8, log=lambda m: None)
+    _write_hyper(settings, (2021, 2022, 2023, 2024), step=True)
     run_asof(settings, (2024, 2025), cold_steps=60, warm_steps=20, draws=8, log=lambda m: None)
     out = asof_dir(settings)
     fits = pl.concat([pl.read_parquet(p) for p in (out / "fits").glob("*.parquet")])

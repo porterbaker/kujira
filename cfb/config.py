@@ -96,9 +96,10 @@ class Thresholds:
 @dataclass(frozen=True)
 class ModelSettings:
     # 2014 has no earlier season of player data, so it is fitted but never evaluated
-    # (project owner, 2026-10-13). Backtests and reports start at eval_first_season.
-    burn_in_seasons: tuple[int, ...] = (2014,)
-    eval_first_season: int = 2015
+    # (project owner, 2026-10-13). 2015 joined it (2026-10-15): its season-step scales could only come
+    # from the 2014-15 NUTS fit, which includes 2015. Backtests and reports start at eval_first_season.
+    burn_in_seasons: tuple[int, ...] = (2014, 2015)
+    eval_first_season: int = 2016
 
 
 @dataclass(frozen=True)

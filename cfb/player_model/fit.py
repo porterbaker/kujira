@@ -53,6 +53,37 @@ def run_svi(st: Static, d: dict, guide_kind: str, steps: int, lr: float = 0.01, 
     return guide, svi.get_params(state), trace
 
 
+def run_chains(model_fn: Callable, d: dict, chains: int, warmup: int, samples: int, keep: set[str],
+               seed: int = 0) -> tuple[dict[str, np.ndarray], dict[str, np.ndarray]]:
+    """NUTS one chain at a time, keeping only the `keep` sites. Peak memory is one chain's draws of every
+    latent plus the kept sites of all chains, not every site of every chain; deterministic sites outside
+    `keep` are never computed. Chains start at prior medians (effects at 0): numpyro's default, uniform(-2, 2) on
+    the unconstrained scale, starts the scales at 0.1-7 against true values of 0.01-0.3, and about one run in two
+    then had a chain that adapted a tiny step size and never left its start (2015, 2018, 2014-15 at seed 0).
+    Returns ({site: (chain, draw, ...)}, {"diverging", "num_steps": (chain, draw)})."""
+    from numpyro import handlers
+    from numpyro.infer import MCMC, NUTS
+
+    m = handlers.block(model_fn, hide_fn=lambda site: site["type"] == "deterministic" and site["name"] not in keep)
+    draws: dict[str, list] = {}
+    extra: dict[str, list] = {"diverging": [], "num_steps": []}
+    for key in jax.random.split(jax.random.PRNGKey(seed), chains):
+        # jit_model_args: the data are arguments of the compiled sampler, not constants baked into it; each
+        # chain's executable would otherwise hold its own copy of the data in JAX's cache.
+        kernel = NUTS(m, target_accept_prob=0.85, max_tree_depth=8, init_strategy=init_to_median(num_samples=15))
+        mcmc = MCMC(kernel, num_warmup=warmup, num_samples=samples,
+                    num_chains=1, progress_bar=False, jit_model_args=True)
+        mcmc.run(key, d, extra_fields=tuple(extra))
+        for k, v in mcmc.get_samples().items():
+            if k in keep:
+                draws.setdefault(k, []).append(np.asarray(v))
+        for k, v in mcmc.get_extra_fields().items():
+            extra[k].append(np.asarray(v))
+        del mcmc
+        jax.clear_caches()
+    return {k: np.stack(v) for k, v in draws.items()}, {k: np.stack(v) for k, v in extra.items()}
+
+
 def sample_guide(guide, params: dict, n: int, seed: int = 1, batch: int = 25) -> list[dict]:
     """Posterior draws of every latent site, in batches to bound memory."""
     out, key = [], jax.random.PRNGKey(seed)

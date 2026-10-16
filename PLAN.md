@@ -19,6 +19,8 @@ probe evidence is in [reports/phase1a_probe.md](reports/phase1a_probe.md), which
 | Transfer match threshold | 85 | 2026-10-13 |
 | Start season | 2014 fitted as burn-in; evaluation from 2015 | 2026-10-13 |
 | Defensive credit (Phase 3) | Team-season unit D in the play model, plus a separate box-score defender model (2016+) | 2026-10-13 |
+| Season-step scales (Phase 3) | Held at rolling two-season NUTS fits (pairs ending S-3..S-1), like the within-season scales; SVI shrinks them 3–10x | 2026-10-15 |
+| Burn-in | **2014 and 2015**; player-model evaluation from 2016 (2015 has no earlier season pair for its step scales) | 2026-10-15 |
 
 ## Phase 1a probe findings
 
@@ -144,7 +146,7 @@ Full detail is in [reports/phase1b_ingest.md](reports/phase1b_ingest.md), which
 - Interceptor credits are 34–47% in 2021–2023.
 - About 0.6% of games have no player credits at all.
 
-## Phase 3 status (paused 2026-10-14)
+## Phase 3 status (resumed 2026-10-15 on a 14 GB / 24-core machine)
 
 **Done and tested** (`pytest` passes offline):
 - Model, as-of driver, defender model, benchmarks, report generator, and the `cfb player` commands.
@@ -161,27 +163,49 @@ Full detail is in [reports/phase1b_ingest.md](reports/phase1b_ingest.md), which
   of single-season NUTS fits on S-3..S-1 (`cfb player hyper`; `scales_for` refuses a missing or
   same-season fit). The season-step scales (tau_s, tau_team, rho) are left free in SVI. The defender
   model follows the same rule, with 2016 as its burn-in.
-- **Scale fit 2014:** done (`data/model/hyper/season=2014.json`, 0 divergences).
 - **The scales drift by season:** 2014 pass_tau_c is 0.097 ± 0.011, against about 0.047 in 2019.
 
-**Next, in order:**
-1. **Memory fix before any more NUTS.** `run_nuts` (validate.py) and `_nuts` (defense.py) keep all four
-   chains' draws of every site, including the per-player-game effects. Peaks went past 2 GB per
-   single-season job, and the 2015 scale fit and the defender check were OOM-killed on the 6.8 GB
-   laptop. The two-season validation was killed at its 3 GB cap after 1 h 48 min. The fix is to run the
-   chains one at a time and keep only the summary sites. With the current code, budget at least 2.5 GB
-   per single-season NUTS job and 4–5 GB for the two-season one.
-2. `cfb player validate --seasons 2014-2015`: two-season NUTS plus svi_normal / svi_fixed / svi_partial.
-   This tests the season random walk and whether the free season-step scales are acceptable
-   (svi_partial). Not yet completed: the 2026-10-14 attempt was OOM-killed.
-3. `cfb player hyper --seasons 2015-2025 --skip-defense`: about 30 minutes per season on the laptop.
-4. `cfb player validate-defense --season 2016`, then `cfb player hyper --seasons 2017-2025 --defense-only`.
-   If the defender check shows no scale bias, the fixed defender scales can be dropped.
-5. `cfb player fit` (202 weekly as-of fits plus the defender fits, about 4 hours on the laptop), then
-   `cfb player report`, then stop for approval.
+**NUTS fixes (2026-10-15)**, all in `run_chains` (fit.py), shared by the offensive and defender models:
+- **Memory.** Chains run one at a time and only the summary sites are kept. Each chain's sampler was also
+  compiled with the season's data baked in as constants, and JAX's compile cache kept every copy (about
+  0.5 GB per chain); the data are now arguments (`jit_model_args`) and the cache is cleared between chains.
+  A single-season scale fit now peaks at about 2.9 GB, and three run side by side.
+- **Stuck chains.** With numpyro's default init (uniform(-2, 2) unconstrained, so scales start at 0.1–7),
+  3 of 6 runs had one chain that sat at max tree depth and never adapted: 2015, 2018 and the 2014–15
+  validation (R-hat on `nu` above 30,000). Chains now start at prior medians. 2015 and 2018 at the same
+  seed then converged (worst scale R-hat 1.040 and 1.051, 63 leapfrog steps on every chain, 42 min each).
+  2014, 2016 and 2017 converged under the old init and are kept.
+- **Guards.** `cfb player hyper` rejects a fit whose worst scale R-hat is above 1.1
+  (`hyper/rejected_season=YYYY_seed=N.json`), retries with the next seed, and otherwise writes nothing;
+  `cfb player validate` stops before SVI if NUTS did not converge. Both take `--seed`, and every NUTS
+  diagnostics file records per-chain steps, divergences and scale means.
 
-**Open question for the owner, with the results:** the defender scales need a burn-in season (2016),
-so defender values used in evaluation start in 2017.
+**Scale fits done (2026-10-15):**
+- Within-season, 2014–2025: worst scale R-hat 1.014–1.088, 0 divergences except 1 in 2022. 2022 failed twice
+  at R-hat 1.11 on `rush_tau_g` (ESS about 20, slow mixing, not a stuck chain) and passed with 1000 + 1000
+  draws (ESS 158). 2020, the short season, has one chain slightly apart on `pass_tau_c` and `recv_tau_c`.
+- Defender, 2016–2025: worst R-hat 1.005–1.015, 0 divergences.
+- **Defender validation (2016):** SVI with tau_c free is about 6% low (0.75 vs 0.80 for sacks); held at NUTS,
+  spread and sd ratios are 0.99–1.04. Value correlation 0.96–0.99 either way. The bias is small but not zero,
+  so the fixed defender scales stay.
+- **Two-season validation (2014–15, rerun):** NUTS converged (worst R-hat 1.038). With the season-step scales
+  free (svi_partial), SVI shrinks them like the within-season ones: O_tau_team 0.004 vs 0.040, player tau_s
+  about 0.007 vs 0.023–0.039, D_rho 0.47 vs 0.69. Player values still correlate 0.965–0.991 with NUTS, but
+  rush spread is 1.24x and the O unit sd ratio 0.65. With every scale held (svi_fixed): correlation
+  0.965–0.999, spread 1.00–1.07. Hence the season-step decision above.
+
+**Step-scale fits (paused 2026-10-15 overnight):** pairs ending 2015–2021 are done (`hyper_step/`); worst
+step-scale R-hat 1.021–1.081, 0 divergences. The 2017–18 pair was rejected at first on `rush_tau_g` alone
+(1.140, a within-season scale a step file doesn't store) and accepted once the rule was narrowed to the stored
+scales. Each pair takes 90–125 min with three side by side (about 3.5–4.3 GB each).
+
+**Next, in order:**
+1. Resume: `seq 2022 2025 | xargs -P 3 -I{} cfb player hyper --step --seasons {}` (about 3.5 h; finished
+   pairs are skipped). The 2015 pair (`hyper_step/season=2015.json`) comes from the validation run above.
+2. `cfb player fit` (202 weekly as-of fits plus the defender fits), then `cfb player report`, then stop for
+   approval. A partial run with free step scales (7 fits) is kept in `data/model/asof_free_step_scales/`.
+
+Defender values used in evaluation start in 2017 (2016 is the defender model's burn-in).
 
 ## 1. Where the brief and the spec disagree
 

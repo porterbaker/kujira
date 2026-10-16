@@ -29,7 +29,7 @@ def test_owner_decisions_recorded():
     assert s.ingest.plays_stats_cap == 2000
     assert s.thresholds.transfer_match_threshold == 85.0
     assert s.thresholds.garbage_time == {2: 38, 3: 28, 4: 22}
-    assert s.seasons[0] == 2014 and s.model.burn_in_seasons == (2014,) and s.model.eval_first_season == 2015
+    assert s.seasons[0] == 2014 and s.model.burn_in_seasons == (2014, 2015) and s.model.eval_first_season == 2016
 
 
 def _unset_key(monkeypatch):

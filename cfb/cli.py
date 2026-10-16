@@ -69,6 +69,7 @@ def build_parser() -> argparse.ArgumentParser:
     pv.add_argument("--warmup", type=int, default=500)
     pv.add_argument("--samples", type=int, default=500)
     pv.add_argument("--svi-steps", type=int, default=30000)
+    pv.add_argument("--seed", type=int, default=0)
     pv.set_defaults(func=cmd_player_validate)
     ph = pcmds.add_parser("hyper", help="single-season NUTS scale fits for the as-of fits; resumable")
     ph.add_argument("--seasons", help="default: every config season but the last (the scales of season S's fits "
@@ -76,8 +77,11 @@ def build_parser() -> argparse.ArgumentParser:
     ph.add_argument("--chains", type=int, default=4)
     ph.add_argument("--warmup", type=int, default=500)
     ph.add_argument("--samples", type=int, default=500)
+    ph.add_argument("--seed", type=int, default=0, help="first NUTS seed; a rejected fit retries with the next")
     ph.add_argument("--skip-defense", action="store_true", help="offensive scales only")
     ph.add_argument("--defense-only", action="store_true", help="defender scales only")
+    ph.add_argument("--step", action="store_true",
+                    help="two-season NUTS on (S-1, S) for the season-step scales; offensive model only")
     ph.set_defaults(func=cmd_player_hyper)
     pvd = pcmds.add_parser("validate-defense", help="defender model: NUTS vs SVI on one season; writes its scales")
     pvd.add_argument("--season", type=int, default=2016)
@@ -201,7 +205,7 @@ def cmd_player_validate(args: argparse.Namespace) -> int:
 
     settings = Settings()
     seasons = parse_seasons(args.seasons, settings.ingest.current_season)
-    run_validation(settings, seasons, args.chains, args.warmup, args.samples, args.svi_steps, log=_log)
+    run_validation(settings, seasons, args.chains, args.warmup, args.samples, args.svi_steps, seed=args.seed, log=_log)
     return 0
 
 
@@ -219,8 +223,12 @@ def cmd_player_hyper(args: argparse.Namespace) -> int:
     settings = Settings()
     seasons = (parse_seasons(args.seasons, settings.ingest.current_season) if args.seasons
                else settings.seasons[:-1])
+    if args.step:
+        seasons = seasons if args.seasons else settings.seasons[1:-1]
+        fit_hyper(settings, seasons, args.chains, args.warmup, args.samples, seed=args.seed, step=True, log=_log)
+        return 0
     if not args.defense_only:
-        fit_hyper(settings, seasons, args.chains, args.warmup, args.samples, log=_log)
+        fit_hyper(settings, seasons, args.chains, args.warmup, args.samples, seed=args.seed, log=_log)
     if not args.skip_defense:
         fit_defense_scales(settings, seasons, args.chains, args.warmup, args.samples, log=_log)
     return 0

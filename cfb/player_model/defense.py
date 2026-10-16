@@ -253,26 +253,20 @@ def hyper_dir(settings: Settings) -> Path:
 def _nuts(st: DefStatic, d: dict, chains: int, warmup: int, samples: int, seed: int = 0) -> tuple[dict, dict]:
     """NUTS on the defender model: flat draws of alpha, gamma, tau_c, c and a diagnostics dict."""
     from numpyro.diagnostics import summary
-    from numpyro.infer import MCMC, NUTS
 
-    from numpyro import handlers
+    from cfb.player_model.fit import run_chains
 
     started = time.monotonic()
     # Deterministic sites (c, s: one value per defender and event) are kept out of the stored draws to bound
     # memory; c is rebuilt from gamma, tau_c and c_z below.
-    m = handlers.block(functools.partial(defense_model, st), hide_fn=lambda site: site["type"] == "deterministic")
-    mcmc = MCMC(NUTS(m, target_accept_prob=0.85, max_tree_depth=8),
-                num_warmup=warmup, num_samples=samples, num_chains=chains, chain_method="sequential", progress_bar=False)
-    mcmc.run(jax.random.PRNGKey(seed), d, extra_fields=("diverging", "num_steps"))
-    by_chain = {k: np.asarray(v) for k, v in mcmc.get_samples(group_by_chain=True).items()
-                if k in ("alpha", "gamma", "tau_c", "c_z")}
+    by_chain, extra = run_chains(functools.partial(defense_model, st), d, chains, warmup, samples,
+                                 {"alpha", "gamma", "tau_c", "c_z"}, seed)
     X = np.asarray(d["X"])
     by_chain["c"] = (np.einsum("pk,abek->abpe", X, by_chain["gamma"])
                      + np.swapaxes(by_chain["tau_c"][..., None] * by_chain.pop("c_z"), -1, -2))  # (chain, draw, n_dp, E)
-    extra = mcmc.get_extra_fields()
     diag = {"seconds": time.monotonic() - started, "chains": chains, "warmup": warmup, "samples": samples,
-            "divergences": int(np.asarray(extra["diverging"]).sum()),
-            "mean_leapfrog_steps": float(np.asarray(extra["num_steps"]).mean()), "sites": {}}
+            "divergences": int(extra["diverging"].sum()),
+            "mean_leapfrog_steps": float(extra["num_steps"].mean()), "sites": {}}
     for site, s in summary(by_chain, group_by_chain=True).items():
         rhat, ess = np.atleast_1d(s["r_hat"]).ravel(), np.atleast_1d(s["n_eff"]).ravel()
         diag["sites"][site] = {"size": int(rhat.size), "max_rhat": float(np.nanmax(rhat)),
