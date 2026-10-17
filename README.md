@@ -6,7 +6,7 @@ A two-stage model built on the [CollegeFootballData](https://collegefootballdata
 1. **Player values.** A hierarchical Bayesian model (NumPyro) estimates a value for every player from play-level EPA (`ppa`).
 2. **Game model.** Player values are aggregated into team strength, which predicts game margins and win probabilities.
 
-Status: **Phase 2 (clean layer) done**: 23 typed tables in `data/clean/`, see
+Status: **Phase 3 (player values) done, awaiting review**: see [reports/phase3_player_model.md](reports/phase3_player_model.md). Phase 2 (clean layer): 23 typed tables in `data/clean/`, see
 [reports/phase2_data_quality.md](reports/phase2_data_quality.md). See [PLAN.md](PLAN.md) for the design and findings,
 [reports/phase1a_probe.md](reports/phase1a_probe.md) for the probe, and [reports/phase1b_ingest.md](reports/phase1b_ingest.md)
 for what landed.

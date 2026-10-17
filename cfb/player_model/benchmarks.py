@@ -136,7 +136,9 @@ def draft_check(settings: Settings, eos: pl.DataFrame) -> pl.DataFrame:
     return pl.DataFrame(rows)
 
 
-def heldout_summary(settings: Settings) -> tuple[pl.DataFrame, pl.DataFrame]:
+def heldout_summary(settings: Settings, first_season: int | None = None) -> tuple[pl.DataFrame, pl.DataFrame]:
+    """By season (burn-in seasons flagged) and by week bucket (seasons from `first_season` only)."""
+    first = settings.model.eval_first_season if first_season is None else first_season
     fits = pl.concat([pl.read_parquet(p) for p in sorted((asof_dir(settings) / "fits").glob("*.parquet"))]) \
         .filter(pl.col("heldout_plays") > 0)
     w = pl.col("heldout_plays")
@@ -144,11 +146,31 @@ def heldout_summary(settings: Settings) -> tuple[pl.DataFrame, pl.DataFrame]:
         w.sum().alias("plays"), ((pl.col("lpd_model") * w).sum() / w.sum()).alias("lpd_model"),
         ((pl.col("lpd_context") * w).sum() / w.sum()).alias("lpd_context"),
         (pl.col("lpd_model") > pl.col("lpd_context")).mean().alias("weeks_model_better"),
-    ).with_columns(gain=pl.col("lpd_model") - pl.col("lpd_context")).sort("season")
+    ).with_columns(gain=pl.col("lpd_model") - pl.col("lpd_context"), burn_in=pl.col("season") < first).sort("season")
     bucket = pl.when(pl.col("through_week") + 1 <= 3).then(pl.lit("weeks 1-3")) \
         .when(pl.col("through_week") + 1 <= 8).then(pl.lit("weeks 4-8")).otherwise(pl.lit("weeks 9+"))
-    by_bucket = fits.with_columns(bucket=bucket).group_by("bucket").agg(
+    by_bucket = fits.filter(pl.col("season") >= first).with_columns(bucket=bucket).group_by("bucket").agg(
         w.sum().alias("plays"), ((pl.col("lpd_model") * w).sum() / w.sum()).alias("lpd_model"),
         ((pl.col("lpd_context") * w).sum() / w.sum()).alias("lpd_context"),
     ).with_columns(gain=pl.col("lpd_model") - pl.col("lpd_context")).sort("bucket")
     return by_season, by_bucket
+
+
+def heldout_by_play_group(settings: Settings, ds: Dataset, first_season: int | None = None) -> pl.DataFrame:
+    """Held-out gain per season split by play group: rushes, passes with a receiver term, and passes without
+    one. The target-known indicator (kappa) is in the model but not the context baseline, and whether a pass
+    has a recorded target depends on its outcome (sacks, throwaways and untargeted incompletions have none;
+    2021-2024 incompletions mostly lack targets), so the pass groups carry outcome information."""
+    from cfb.player_model.model import make_arrays
+
+    first = settings.model.eval_first_season if first_season is None else first_season
+    a = make_arrays(ds, ds.plays, compact=False)
+    known = (a.target_term * a.roles["recv"].play_known) > 0
+    group = np.where(a.kind == 1, "rush", np.where(known, "pass_target_known", "pass_no_target"))
+    attrs = pl.DataFrame({"play_idx": np.arange(len(a.y)), "group": group})
+    held = pl.concat([pl.read_parquet(p) for p in sorted((asof_dir(settings) / "heldout").glob("*.parquet"))])
+    held = held.filter(pl.col("season") >= first).join(attrs, on="play_idx")
+    gain = held.group_by("season", "group").agg((pl.col("lpd_model") - pl.col("lpd_context")).mean().alias("gain"))
+    share = held.group_by("season").agg((pl.col("group") == "pass_no_target").mean().alias("share_pass_no_target"))
+    return gain.pivot(on="group", index="season", values="gain").join(share, on="season").select(
+        "season", "rush", "pass_target_known", "pass_no_target", "share_pass_no_target").sort("season")

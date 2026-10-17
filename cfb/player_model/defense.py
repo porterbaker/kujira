@@ -239,6 +239,7 @@ def run_defense_asof(settings: Settings, plan: list[tuple[int, int]], *, cold_st
         vals.with_columns(**{f"delta_{k}": pl.lit(v) for k, v in deltas.items()}).write_parquet(path)
         log(f"  defense {season} wk {week:>2}: {int(mask.sum()):,} defender-games, {steps} steps, "
             f"{time.monotonic() - started:.0f}s, loss {trace[-1][1]:,.0f}")
+        jax.clear_caches()  # as in run_asof: compiled fits otherwise accumulate in JAX's cache
 
 
 # ---------- validation and scales (NUTS vs SVI, as for the offensive model) ----------

@@ -146,7 +146,7 @@ Full detail is in [reports/phase1b_ingest.md](reports/phase1b_ingest.md), which
 - Interceptor credits are 34–47% in 2021–2023.
 - About 0.6% of games have no player credits at all.
 
-## Phase 3 status (resumed 2026-10-15 on a 14 GB / 24-core machine)
+## Phase 3 status (done 2026-10-16; awaiting owner approval)
 
 **Done and tested** (`pytest` passes offline):
 - Model, as-of driver, defender model, benchmarks, report generator, and the `cfb player` commands.
@@ -194,16 +194,39 @@ Full detail is in [reports/phase1b_ingest.md](reports/phase1b_ingest.md), which
   rush spread is 1.24x and the O unit sd ratio 0.65. With every scale held (svi_fixed): correlation
   0.965–0.999, spread 1.00–1.07. Hence the season-step decision above.
 
-**Step-scale fits (paused 2026-10-15 overnight):** pairs ending 2015–2021 are done (`hyper_step/`); worst
-step-scale R-hat 1.021–1.081, 0 divergences. The 2017–18 pair was rejected at first on `rush_tau_g` alone
-(1.140, a within-season scale a step file doesn't store) and accepted once the rule was narrowed to the stored
-scales. Each pair takes 90–125 min with three side by side (about 3.5–4.3 GB each).
+**Step-scale fits (done 2026-10-16):** all 11 pairs (ending 2015–2025); worst step-scale R-hat 1.005–1.081.
+- The 2017–18 pair was rejected at first on `rush_tau_g` alone (1.140), a within-season scale a step file doesn't
+  store. It was accepted once the rule was narrowed to the stored scales.
+- The 2023–24 pair failed on `recv_tau_s` (1.142, ESS 35, slow mixing) and passed with 1000 + 1000 draws
+  (1.028, ESS 108). Its chains still spread from 0.048 to 0.066.
+- The 2022–23 pair had 2 divergences in 2,000 draws.
+- Each pair took 90–155 min with up to three side by side (about 3.5–6.7 GB each).
 
-**Next, in order:**
-1. Resume: `seq 2022 2025 | xargs -P 3 -I{} cfb player hyper --step --seasons {}` (about 3.5 h; finished
-   pairs are skipped). The 2015 pair (`hyper_step/season=2015.json`) comes from the validation run above.
-2. `cfb player fit` (202 weekly as-of fits plus the defender fits), then `cfb player report`, then stop for
-   approval. A partial run with free step scales (7 fits) is kept in `data/model/asof_free_step_scales/`.
+**As-of fits (done 2026-10-16):** 202 offensive fits and 169 defender fits, 6.6 h. The as-of loops leaked
+about 170 MB a fit through JAX's compile cache, which is now cleared after each fit; the process then held at
+4.3–5.2 GB. A partial run with free step scales (7 fits) is kept in `data/model/asof_free_step_scales/`.
+
+**Results** ([reports/phase3_player_model.md](reports/phase3_player_model.md)):
+- **Held-out next-week lpd:** the model beats the context-only baseline by 0.04–0.12 nats per play in every
+  evaluated season. **Most of that gain is not player value.** The model has the target-known indicator (kappa)
+  and the baseline doesn't, and a pass has no recorded target exactly when it fails. Gain on passes with no
+  target is about 0.30. Gain on passes with a target rises from 0.04 to 0.19 over 2021–2024, as incompletion
+  targets go missing. Gain on rushes, which carry no such indicator, is only 0.002–0.012.
+- **CFBD agreement** (end-of-season, 2015 onward): Pearson with CFBD PPA is 0.31 for QB passing, 0.53 for RB
+  rushing, 0.64 for QB rushing, and 0.55–0.60 for receivers.
+- **Draft check:** passers are the outlier (Spearman 0.01, AUC 0.56). RB, WR and TE have AUC 0.61–0.76, and
+  defenders 0.82–0.85 (Spearman 0.10–0.40).
+- **Passer spread:** the sd of end-of-season passer values falls from 0.073 (2014) to 0.029 (2025). The
+  passer season-step scale falls in step (pass_tau_s 0.039 for 2014–15, 0.008 for 2023–24). The spread is not
+  lower in 2021–2024 than in 2016–2018, so the target-known indicator shows no sign of absorbing passer skill.
+
+**Open questions for the owner:**
+1. **Held-out baseline.** Give the context baseline the same nuisance indicators (target known, passer/rusher
+   unknown), so the gain measures players and units. This is about 1 h of compute; the player model is not refit.
+2. **Weak passer values.** Passing correlates 0.31 with CFBD and is unrelated to draft position. Candidates:
+   heavy shrinkage from the small fitted pass scales, the kappa term, and sacks credited to the passer.
+   Investigating this before Phase 4 is recommended, since QB value will carry a lot of weight in team strength.
+3. Approve Phase 3 as is, or after (1) and (2).
 
 Defender values used in evaluation start in 2017 (2016 is the defender model's burn-in).
 

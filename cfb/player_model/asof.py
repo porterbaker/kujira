@@ -175,3 +175,6 @@ def run_asof(settings: Settings, seasons: tuple[int, ...] | None = None, *, cade
                                        "seconds": pl.Float64}).write_parquet(out / "fits" / f"{tag}.parquet")
         log(f"  {season} wk {week:>2}: {int(mask.sum()):>9,} plays, {steps} steps, {secs:.0f}s"
             + (f", next-week lpd {lpd.mean():.4f} vs context {base.mean():.4f} ({len(test):,} plays)" if len(test) else ""))
+        # Each fit compiles its own SVI step and samplers, and JAX's cache kept every one: the process grew by
+        # about 170 MB a fit (4.7 to 8.6 GB over 25 fits) until this was added.
+        jax.clear_caches()
